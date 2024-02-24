@@ -4,55 +4,56 @@ import dummyData from '../data/dummyData'
 import AddProject from './admin/AddProject';
 import Upload from './admin/Upload'
 
-const Table = () => {
+const Table = ({selectedButton}) => {
 
   const [projects, setProjects] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [showAddProjectForm, setShowAddProjectForm] = useState(false);
   const [showUploadForm, setShowUploadForm] = useState(false);
   
+  
   const maxRowsPerPage = 10;
 
   useEffect(() => {
-    setProjects(dummyData);
-  }, []);
+    setProjects(dummyData.filter(project => project.type === selectedButton));
+}, [selectedButton]);
 
-  const handleAddProject = () => {
-    setShowAddProjectForm(true);
-  };
+const handleAddProject = () => {
+  setShowAddProjectForm(true);
+};
 
-  const handleUpload = () => {
-    setShowUploadForm(true);
-  };
+const handleUpload = () => {
+  setShowUploadForm(true);
+};
 
   // const handleButtonClick = (type) => {
   //   setSelectedButton(type);
   // };
 
-//   const renderColumns = () => {
-//     switch (selectedButton) {
-//         case 'Apartments':
-//             return (
-//                 <>
-//                     <th>Tower Number</th>
-//                     <th>Flat Number</th>
-//                 </>
-//             );
-//         case 'Villas':
-//             return <th>Villa Number</th>;
-//         case 'Plots':
-//             return <th>Plot Number</th>;
-//         case 'Farm lands':
-//             return (
-//                 <>
-//                     <th>Plot Number</th>
-//                     <th>Sq yards</th>
-//                 </>
-//             );
-//         default:
-//             return null;
-//     }
-// };
+  const renderColumns = () => {
+    switch (selectedButton) {
+        case 'Apartments':
+            return (
+                <>
+                    <th>Tower Number</th>
+                    <th>Flat Number</th>
+                </>
+            );
+        case 'Villas':
+            return <th>Villa Number</th>;
+        case 'Plots':
+            return <th>Plot Number</th>;
+        case 'Farm lands':
+            return (
+                <>
+                    <th>Plot Number</th>
+                    <th>Sq yards</th>
+                </>
+            );
+        default:
+            return null;
+    }
+};
 
   const getStatusColor = (status) => {
     switch (status) {
@@ -104,8 +105,7 @@ const Table = () => {
             <tr>
               <th>Sno</th>
               <th>Project Name</th>
-              <th>Tower Number</th>
-              <th>Flat Number</th>
+              {renderColumns()}
               <th>Project ID</th>
               <th>Status</th>
             </tr>
@@ -115,8 +115,19 @@ const Table = () => {
               <tr key={project.projectID}>
               <td>{project.sno}</td>
               <td>{project.projectName}</td>
-              <td>{project.towerNumber}</td>
-              <td>{project.flatNumber}</td>
+              {selectedButton === 'Apartments' && <>
+                                        <td>{project.towerNumber}</td>
+                                        <td>{project.flatNumber}</td>
+                                        </>
+                                    }
+                                    {selectedButton === 'Villas' &&
+                                        <td>{project.villaNumber}</td>}
+                                    {selectedButton === 'Plots' &&
+                                        <td>{project.plotNumber}</td>}
+                                    {selectedButton === 'Farm lands' && <>
+                                        <td>{project.plotNumber}</td>
+                                        <td>{project.sqYards}</td>
+                                    </>}
               <td>{project.projectID}</td>
               <td className='status' style={{ color: getStatusColor(project.status) }}>{project.status}</td>
             </tr>))}
@@ -129,8 +140,8 @@ const Table = () => {
         <button onClick={handleNextPage} disabled={endIndex >= projects.length}>Next</button>
       </div>
       </div>
-      {showAddProjectForm && <AddProject />}
-      {showUploadForm && <Upload />}
+      {showAddProjectForm && <AddProject selectedType={selectedButton} />}
+      {showUploadForm && <Upload selectedType={selectedButton} />}
     </div>
   )
 }

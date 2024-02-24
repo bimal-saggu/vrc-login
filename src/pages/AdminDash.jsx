@@ -8,7 +8,8 @@ import Scale from '../components/Scale'
 import overViewData from '../data/overviewData'
 
 const AdminDash = () => {
-    const [selectedButton, setSelectedButton] = useState(null);
+    const [selectedButton, setSelectedButton] = useState('Apartments');
+   
     
     const handleButtonClick = (buttonType) => {
         setSelectedButton(buttonType);
@@ -62,7 +63,7 @@ const AdminDash = () => {
                     </div>
                 </div>
             </div>
-            <Table />
+            <Table selectedButton={selectedButton} />
             <Scale />
         </div>
     </div>

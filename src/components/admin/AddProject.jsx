@@ -1,13 +1,112 @@
 import React, { useState } from 'react'
 import '../admin/style.css'
 
-const AddProject = () => {
+const AddProject = ({ selectedType }) => {
     const [isOpen, setIsOpen] = useState(true);
 
     const handleClose = () => { 
       setIsOpen(false);
       onClose();
     };
+
+    const inputFieldsMap = {
+        Apartments: [
+          {
+            label: "Project Type",
+            id: "type",
+            type: "text",
+            value: selectedType,
+            readOnly: true,
+          },
+          {
+            label: "Project Name",
+            id: "name",
+            type: "text",
+            placeholder: "Enter project name",
+          },
+          {
+            label: "Tower Number",
+            id: "tower-number",
+            type: "text",
+            placeholder: "Enter tower number",
+          },
+          {
+            label: "Flat Number",
+            id: "flat-number",
+            type: "text",
+            placeholder: "Enter flat number",
+          },
+        ],
+        Villas: [
+          {
+            label: "Project Type",
+            id: "type",
+            type: "text",
+            value: selectedType,
+            readOnly: true,
+          },
+          {
+            label: "Project Name",
+            id: "name",
+            type: "text",
+            placeholder: "Enter project name",
+          },
+          {
+            label: "Villa Number",
+            id: "villa-number",
+            type: "text",
+            placeholder: "Enter villa number",
+          },
+        ],
+        Plots: [
+          {
+            label: "Project Type",
+            id: "type",
+            type: "text",
+            value: selectedType,
+            readOnly: true,
+          },
+          {
+            label: "Project Name",
+            id: "name",
+            type: "text",
+            placeholder: "Enter project name",
+          },
+          {
+            label: "Plot Number",
+            id: "plot-number",
+            type: "text",
+            placeholder: "Enter plot number",
+          },
+        ],
+        "Farm lands": [
+          {
+            label: "Project Type",
+            id: "type",
+            type: "text",
+            value: selectedType,
+            readOnly: true,
+          },
+          {
+            label: "Project Name",
+            id: "name",
+            type: "text",
+            placeholder: "Enter project name",
+          },
+          {
+            label: "Plot Number",
+            id: "plot-number",
+            type: "text",
+            placeholder: "Enter plot number",
+          },
+          {
+            label: "Sq. yards",
+            id: "sq-yards",
+            type: "text",
+            placeholder: "Enter sq. yards",
+          },
+        ],
+      };
 
   return (
         <div className='add_Proj'>
@@ -19,22 +118,20 @@ const AddProject = () => {
                 </div>
                 <div className='add_Form'>
                     <form action="">
-                    <div className='add_input-field'>
-                        <label htmlFor="type" className='add-label'>Project Type</label>
-                        <input id='type' type="text"  />
-                    </div>
-                    <div className='add_input-field'>
-                        <label htmlFor="name" className='add-label'>Project Name</label>
-                        <input id='name' type="text" placeholder='Enter project name' />
-                    </div>
-                    <div className='add_input-field'>
-                        <label htmlFor="tower-number" className='add-label'>Tower Number</label>
-                        <input id='tower-number' type="text" placeholder='Enter tower number' />
-                    </div>
-                    <div className='add_input-field'>
-                        <label htmlFor="flat-number" className='add-label'>Project Name</label>
-                        <input id='flat-number' type="text" placeholder='Enter flat number' />
-                    </div>
+                    {inputFieldsMap[selectedType].map((field) => (
+              <div className="add_input-field" key={field.id}>
+                <label htmlFor={field.id} className="add-label">
+                  {field.label}
+                </label>
+                <input
+                  id={field.id}
+                  type={field.type}
+                  placeholder={field.placeholder}
+                  value={field.value}
+                  readOnly={field.readOnly}
+                />
+              </div>
+            ))}
                     <div className='add_Btns'>
                         <div className='disc-btn'>
                             <button onClick={handleClose}>Discard</button>

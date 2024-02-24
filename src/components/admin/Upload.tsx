@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 
-const Upload = () => {
+const Upload = ({ selectedType }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const handleClose = () => {
     setIsOpen(false);
     // onClose();
   };
+
   return (
     <div className="add_Proj">
       <div className="add_Sec">
@@ -17,18 +18,24 @@ const Upload = () => {
           <form action="">
             <div className="add_input-field">
               <div className="file-label">
-                <label htmlFor="file">Choose a CSV File</label>
+                <label htmlFor="file">Choose a CSV file.</label>
               </div>
               <div className="file-input-wrapper">
                 <input id="file" type="file" />
-                <button className="browse-button">Browse Files</button>
+                <button className="browse-button">Browse files</button>
               </div>
             </div>
             <div className="add_input-field">
-              <label htmlFor="flat-number" className="add-label">
+              <label htmlFor="type" className="add-label">
                 Project Type
               </label>
-              <input id="flat-number" type="text" />
+              <input
+                id="type"
+                type="text"
+                placeholder="Enter project type"
+                value={selectedType}
+                readOnly
+              />
             </div>
             <div className="add_Btns">
               <div className="can-btn">
