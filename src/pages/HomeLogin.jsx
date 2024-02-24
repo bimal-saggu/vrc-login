@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 
 const HomeLogin = () => {
   return (
-    <div>
-      <div>
         <div className="log">
           <div className="log__Title">
             <h3>Log in to your account</h3>
@@ -42,10 +40,9 @@ const HomeLogin = () => {
                 </span>
               </div>
             </form>
+          <Link to='/adminDash'>Admin Dash</Link>
           </div>
         </div>
-      </div>
-    </div>
   );
 };
 

@@ -10,8 +10,6 @@ const SignUp = () => {
   };
 
   return (
-    <div>
-      <div>
         <div className="signUp">
           <div className="log__Title">
             <h3>Create an account</h3>
@@ -100,7 +98,7 @@ const SignUp = () => {
                       Bank A/C Number
                     </label>
                     <input
-                      type="text"
+                      type="number"
                       id="account"
                       placeholder="Enter Bank A/C Number"
                     />
@@ -110,7 +108,7 @@ const SignUp = () => {
                       Business Experience
                     </label>
                     <input
-                      type="number"
+                      type="text"
                       id="experience"
                       placeholder="Enter Business Experience"
                     />
@@ -128,8 +126,6 @@ const SignUp = () => {
             </form>
           </div>
         </div>
-      </div>
-    </div>
   );
 };
 

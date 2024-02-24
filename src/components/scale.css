@@ -1,0 +1,61 @@
+.scale {
+  width: auto;
+  background: white;
+  border-radius: 8px;
+  margin-left: 300px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /* transform: translateX(5%); */
+}
+
+.scale_Data {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-heading {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.one {
+  color: #10a760;
+}
+
+.two {
+  color: #e19133;
+}
+
+.three {
+  color: #1366d9;
+}
+
+.four {
+  color: #515151;
+}
+
+.five {
+  color: #9c9c9c;
+}
+
+.six {
+  color: #ef1f1f;
+}
+.scale_Items {
+  padding: 0 15px;
+}
+
+.item-count {
+  margin: 15px;
+}
+
+.scale_Items span {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 25px;
+  color: #48505e;
+  padding: 5px;
+}
