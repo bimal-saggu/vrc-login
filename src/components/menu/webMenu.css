@@ -20,6 +20,10 @@
   /* margin-top: 120px; */
 }
 
+.menu-items {
+  margin: 60px 0 0 0;
+}
+
 .menu-items li {
   list-style: none;
   display: flex;
@@ -27,7 +31,7 @@
 }
 
 .menu-items a {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   letter-spacing: 0em;
   text-align: center;
@@ -35,17 +39,28 @@
   text-decoration: none;
   display: inline-block;
   padding: 11px 0;
-  border-radius: 5px;
 }
 
 .menu-items a:hover {
   color: #1366d9;
 }
 
+.menu-items a:active {
+  color: #1366d9;
+}
+
 .menu-items a img {
+  width: 20px;
+  height: 20px;
   margin-right: 10px;
 }
 
 .menu-items a p {
   margin: 0 0 0 10px;
+}
+
+@media screen and (max-width: 1023px) {
+  .menu {
+    display: none;
+  }
 }

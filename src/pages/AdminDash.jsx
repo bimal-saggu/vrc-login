@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../components/admin/style.css'
 import NavBar from '../components/NavBar'
-import WebMenu from '../components/WebMenu'
+import WebMenu from '../components/menu/WebMenu'
 import Overview from '../components/Overview'
 import Table from '../components/Table'
 import Scale from '../components/Scale'

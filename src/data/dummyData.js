@@ -10,10 +10,10 @@ const dummyData = [
   { sno: 9, projectName: 'Project I', towerNumber: '', flatNumber: '', villaNumber: '', plotNumber: 302, sqYards: '', projectID: 12345686, status: 'Sold', type: 'Plots' },
   { sno: 10, projectName: 'Project J', towerNumber: '', flatNumber: '', villaNumber: '', plotNumber: 303, sqYards: '', projectID: 12345687, status: 'Available', type: 'Plots' },
   { sno: 11, projectName: 'Project K', towerNumber: '', flatNumber: '', villaNumber: '', plotNumber: 304, sqYards: '', projectID: 12345688, status: 'Advance', type: 'Plots' },
-  { sno: 12, projectName: 'Project L', towerNumber: '', flatNumber: '', villaNumber: '', plotNumber: '', sqYards: 200, projectID: 12345689, status: 'Available', type: 'Farm lands' },
-  { sno: 13, projectName: 'Project M', towerNumber: '', flatNumber: '', villaNumber: '', plotNumber: '', sqYards: 250, projectID: 12345690, status: 'Sold', type: 'Farm lands' },
-  { sno: 14, projectName: 'Project N', towerNumber: '', flatNumber: '', villaNumber: '', plotNumber: '', sqYards: 300, projectID: 12345691, status: 'Available', type: 'Farm lands' },
-  { sno: 15, projectName: 'Project O', towerNumber: '', flatNumber: '', villaNumber: '', plotNumber: '', sqYards: 350, projectID: 12345692, status: 'Advance', type: 'Farm lands' }
+  { sno: 12, projectName: 'Project L', towerNumber: '', flatNumber: '', villaNumber: '', plotNumber: 301, sqYards: 200, projectID: 12345689, status: 'Available', type: 'Farm lands' },
+  { sno: 13, projectName: 'Project M', towerNumber: '', flatNumber: '', villaNumber: '', plotNumber: 302, sqYards: 250, projectID: 12345690, status: 'Sold', type: 'Farm lands' },
+  { sno: 14, projectName: 'Project N', towerNumber: '', flatNumber: '', villaNumber: '', plotNumber: 303, sqYards: 300, projectID: 12345691, status: 'Available', type: 'Farm lands' },
+  { sno: 15, projectName: 'Project O', towerNumber: '', flatNumber: '', villaNumber: '', plotNumber: 304, sqYards: 350, projectID: 12345692, status: 'Advance', type: 'Farm lands' }
 ];
 
 export default dummyData;

@@ -40,7 +40,7 @@ const HomeLogin = () => {
                 </span>
               </div>
             </form>
-          <Link to='/adminDash'>Admin Dash</Link>
+          <Link to='/sales/dashboard'>Sales Dash</Link>
           </div>
         </div>
   );

@@ -3,6 +3,7 @@ import './table.css'
 import dummyData from '../data/dummyData'
 import AddProject from './admin/AddProject';
 import Upload from './admin/Upload'
+import ProjectDetails from './sales/ProjectDetails';
 
 const Table = ({selectedButton}) => {
 
@@ -10,6 +11,9 @@ const Table = ({selectedButton}) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [showAddProjectForm, setShowAddProjectForm] = useState(false);
   const [showUploadForm, setShowUploadForm] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [showProjectDetails, setShowProjectDetails] = useState(false);
+  const [viewportWidth, setViewportWidth] = useState(window.innerWidth); // Track viewport width
   
   
   const maxRowsPerPage = 10;
@@ -17,6 +21,18 @@ const Table = ({selectedButton}) => {
   useEffect(() => {
     setProjects(dummyData.filter(project => project.type === selectedButton));
 }, [selectedButton]);
+
+useEffect(() => {
+  const handleResize = () => {
+    setViewportWidth(window.innerWidth);
+  };
+
+  window.addEventListener('resize', handleResize); // Listen for viewport width changes
+
+  return () => {
+    window.removeEventListener('resize', handleResize); // Cleanup
+  };
+}, []);
 
 const handleAddProject = () => {
   setShowAddProjectForm(true);
@@ -26,6 +42,14 @@ const handleUpload = () => {
   setShowUploadForm(true);
 };
 
+const handleCellClick = (project) => {
+  setSelectedProject(project);
+  setShowProjectDetails(true);
+};
+
+const handleCloseProjectDetails = () => {
+  setShowProjectDetails(false);
+};
   // const handleButtonClick = (type) => {
   //   setSelectedButton(type);
   // };
@@ -35,19 +59,19 @@ const handleUpload = () => {
         case 'Apartments':
             return (
                 <>
-                    <th>Tower Number</th>
-                    <th>Flat Number</th>
+                    <th className="tower-number">Tower Number</th>
+                    <th className="flat-number">Flat Number</th>
                 </>
             );
         case 'Villas':
-            return <th>Villa Number</th>;
+            return <th className="villa-number">Villa Number</th>;
         case 'Plots':
-            return <th>Plot Number</th>;
+            return <th className="plot-number">Plot Number</th>;
         case 'Farm lands':
             return (
                 <>
-                    <th>Plot Number</th>
-                    <th>Sq yards</th>
+                    <th className="plot-number">Plot Number</th>
+                    <th className="sq-yards">Sq yards</th>
                 </>
             );
         default:
@@ -105,31 +129,31 @@ const handleUpload = () => {
             <tr>
               <th>Sno</th>
               <th>Project Name</th>
-              {renderColumns()}
+              {viewportWidth >= 1024 && renderColumns()}
               <th>Project ID</th>
-              <th>Status</th>
+              <th className='proj-status'>Status</th>
             </tr>
           </thead>
           <tbody>
             {displayedProjects.map(project => (
-              <tr key={project.projectID}>
-              <td>{project.sno}</td>
-              <td>{project.projectName}</td>
-              {selectedButton === 'Apartments' && <>
-                                        <td>{project.towerNumber}</td>
-                                        <td>{project.flatNumber}</td>
+              <tr key={project.projectID} className={selectedButton.toLowerCase() + "-row"}>
+              <td onClick={() => handleCellClick(project)}>{project.sno}</td>
+              <td onClick={() => handleCellClick(project)}>{project.projectName}</td>
+              {viewportWidth >= 1024 && selectedButton === 'Apartments' && <>
+                                        <td className='tower-number'>{project.towerNumber}</td>
+                                        <td className='flat-number'>{project.flatNumber}</td>
                                         </>
                                     }
-                                    {selectedButton === 'Villas' &&
-                                        <td>{project.villaNumber}</td>}
-                                    {selectedButton === 'Plots' &&
-                                        <td>{project.plotNumber}</td>}
-                                    {selectedButton === 'Farm lands' && <>
-                                        <td>{project.plotNumber}</td>
-                                        <td>{project.sqYards}</td>
+                                    {viewportWidth >= 1024 && selectedButton === 'Villas' &&
+                                        <td className='villa-number'>{project.villaNumber}</td>}
+                                    {viewportWidth >= 1024 && selectedButton === 'Plots' &&
+                                        <td className='plot-number'>{project.plotNumber}</td>}
+                                    {viewportWidth >= 1024 && selectedButton === 'Farm lands' && <>
+                                        <td className='plot-number'>{project.plotNumber}</td>
+                                        <td className='sq-yards'>{project.sqYards}</td>
                                     </>}
-              <td>{project.projectID}</td>
-              <td className='status' style={{ color: getStatusColor(project.status) }}>{project.status}</td>
+              <td onClick={() => handleCellClick(project)}>{project.projectID}</td>
+              <td className='proj-status' style={{ color: getStatusColor(project.status) }}>{project.status}</td>
             </tr>))}
           </tbody>
         </table>
@@ -142,6 +166,7 @@ const handleUpload = () => {
       </div>
       {showAddProjectForm && <AddProject selectedType={selectedButton} />}
       {showUploadForm && <Upload selectedType={selectedButton} />}
+      {showProjectDetails && <ProjectDetails project={selectedProject} getStatusColor={getStatusColor} onClose={handleCloseProjectDetails}/>}
     </div>
   )
 }
