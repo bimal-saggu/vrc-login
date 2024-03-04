@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../sales/onBoarding.css'
+import '../sales-channel/onBoarding.css'
 import logo from '../../assets/logo.svg'
 import menu from '../../assets/menu.svg'
 import MobileModal from "../menu/MobileModal";

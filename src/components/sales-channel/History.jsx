@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import '../sales/history.css'
+import '../sales-channel/history.css'
 import logo from '../../assets/logo.svg'
 import menu from '../../assets/menu.svg'
 import MobileModal from "../menu/MobileModal";

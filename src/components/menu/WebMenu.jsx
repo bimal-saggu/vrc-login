@@ -61,16 +61,16 @@ const WebMenu = ({ roleType }) => {
             return (
               <>
                 <li>
-                  <a href=""><img src={home} alt="" /></a>
-                  <a href=""><p>Dashboard</p></a>
+                  <a href="/channel/dashboard"><img src={home} alt="" /></a>
+                  <a href="/channel/dashboard"><p>Dashboard</p></a>
                 </li>
                 <li>
-                  <a href=""><img src={history} alt="" /></a>
-                  <a href=""><p>Onboarding Form</p></a>
+                  <a href="/channel/onBoard"><img src={history} alt="" /></a>
+                  <a href="/channel/onBoard"><p>Onboarding Form</p></a>
                 </li>
                 <li>
-                  <a href=""><img src={approval} alt="" /></a>
-                  <a href=""><p>History</p></a>
+                  <a href="/channel/history"><img src={approval} alt="" /></a>
+                  <a href="/channel/history"><p>History</p></a>
                 </li>
               </>
             );

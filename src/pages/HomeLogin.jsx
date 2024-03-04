@@ -41,6 +41,7 @@ const HomeLogin = () => {
               </div>
             </form>
           <Link to='/sales/dashboard'>Sales Dash</Link>
+          <Link to='/channel/dashboard'>Channel Dash</Link>
           </div>
         </div>
   );

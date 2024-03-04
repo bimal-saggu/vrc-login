@@ -3,7 +3,7 @@ import './table.css'
 import dummyData from '../data/dummyData'
 import AddProject from './admin/AddProject';
 import Upload from './admin/Upload'
-import ProjectDetails from './sales/ProjectDetails';
+import ProjectDetails from './sales-channel/ProjectDetails';
 
 const Table = ({selectedButton}) => {
 

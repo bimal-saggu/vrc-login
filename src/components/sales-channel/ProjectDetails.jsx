@@ -1,5 +1,5 @@
 import React from 'react';
-import '../sales/style.css';
+import '../sales-channel/style.css';
 import close from '../../assets/menuClose.svg'
 
 const ProjectDetails = ({ project, getStatusColor, onClose }) => {

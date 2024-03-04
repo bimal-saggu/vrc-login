@@ -7,7 +7,7 @@ import MobileModal from "../components/menu/MobileModal";
 import WebMenu from '../components/menu/WebMenu'
 import NavBar from '../components/NavBar'
 
-const SalesDash = () => {
+const ChannelDash = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState('Apartments');
 
@@ -79,4 +79,4 @@ const SalesDash = () => {
   );
 };
 
-export default SalesDash;
+export default ChannelDash;
