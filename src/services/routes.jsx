@@ -7,6 +7,7 @@ import SalesDash from "../pages/SalesDash";
 import OnBoarding from "../components/sales-channel/OnBoarding";
 import History from "../components/sales-channel/History";
 import ChannelDash from "../pages/ChannelDash";
+import Pending from "../components/admin/approval/Pending";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
       { index: true, element: <HomeLogin /> },
       { path: "signup", element: <SignUp /> },
       { path: "/admin/dashboard", element:  <AdminDash />},
+      { path: "/admin/approvals", element:  <Pending />},
       { path: "/sales/dashboard", element:  <SalesDash />},
       { path: "/sales/onBoard", element:  <OnBoarding />},
       { path: "/sales/history", element:  <History />},

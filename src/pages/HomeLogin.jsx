@@ -40,6 +40,7 @@ const HomeLogin = () => {
                 </span>
               </div>
             </form>
+          <Link to='/admin/dashboard'>Admin Dash</Link>
           <Link to='/sales/dashboard'>Sales Dash</Link>
           <Link to='/channel/dashboard'>Channel Dash</Link>
           </div>
