@@ -1,0 +1,147 @@
+.receipt-type {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+
+.receipt-type-btn button {
+  background: #1366d9;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  border-radius: 5px;
+  border: none;
+  padding: 10px 15px;
+  width: 116px;
+}
+
+.receipt-table-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.receipt-table-head h3 {
+  color: #383e49;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.receipts-table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-headings p {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.table-data p {
+  color: #222121;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+/* Pending Receipts Card */
+
+.rec-det {
+  width: 390px;
+  background: white;
+  border-radius: 8px;
+  position: fixed; /* Keep the modal fixed */
+  top: 50%;
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%);
+}
+
+.rec-sec {
+  padding: 25px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.rec-det-head h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #121212;
+  margin-top: 0;
+  text-align: center;
+}
+
+.rec-data-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.rec-data-field label {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #707070;
+}
+
+.rec-data-field input {
+  font-size: 12px;
+  font-weight: 400;
+  color: #858d9d;
+  border-radius: 8px;
+  border: 1px solid #d0d5dd;
+  padding: 5px 5px;
+  margin-bottom: 20px;
+  /* width: 55%; */
+}
+
+.rec-data-field input:focus {
+  outline: none;
+}
+
+.rec-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.rec-delete button {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  border-radius: 4px;
+  border: 1px solid #707070;
+  background: #d73b3b;
+  padding: 10px 20px;
+}
+
+.rec-sec-actions {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.rec-sec-actions button {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 10px 20px;
+}
+
+.save {
+  color: #5f5d5d;
+  border-radius: 4px;
+  border: 1px solid #707070;
+  background: rgba(152, 152, 152, 0);
+}
+
+.export {
+  color: #fff;
+  border-radius: 4px;
+  border: 1px solid #707070;
+  background: #1366d9;
+}
