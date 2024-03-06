@@ -5,6 +5,7 @@ import menu from '../../../assets/menu.svg'
 import MobileModal from "../../menu/MobileModal";
 import PendingReceiptsTable from "./PendingReceiptsTable";
 import PartSoldTable from "./PartSoldTable";
+import DeletedReceiptsTable from "./DeletedReceiptsTable";
 
 const PendingReceipts = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -16,6 +17,11 @@ const PendingReceipts = () => {
 
     const handleStatusChange = (newStatus) => {
         setStatus(newStatus);
+    };
+
+    const handleDeletedReceiptsClick = () => {
+        // Change status to represent deleted receipts
+        setStatus("Deleted");
     };
 
 
@@ -43,8 +49,9 @@ const PendingReceipts = () => {
                 <button style={{ backgroundColor: status === 'Sold' ? '#1366d9' : '' }} onClick={() => handleStatusChange("Sold")}>Sold</button>
             </div>
         </div>
-        {status === 'Pending' && <PendingReceiptsTable status={status} />}
+        {status === 'Pending' && <PendingReceiptsTable status={status} onDeletedReceiptsClick={handleDeletedReceiptsClick} />}
         {(status === 'Part-Payment' || status === 'Sold') && <PartSoldTable status={status} />}
+        {status === "Deleted" && <DeletedReceiptsTable />}
         <MobileModal isOpen={isOpen} onClose={toggleModal}/>
     </div>
   );

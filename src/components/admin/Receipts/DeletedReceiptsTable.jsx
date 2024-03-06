@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import '../Receipts/pendingReceipts.css';
-import receiptsDataDummy from '../../../data/receiptsDataDummy'
-import PendingReceiptCard from "./PendingReceiptCard";
+import deletedReceiptsDataDummy from '../../../data/deletedReceiptsDataDummy'
+import DeletedReceiptsCard from "./DeletedReceiptsCard";
 
-const PendingReceiptsTable = ({onDeletedReceiptsClick}) => {
-    const [receiptsData, setReceiptsData] = useState([]);
+const DeletedReceiptsTable = () => {
+    const [deletedReceiptsData, setDeletedReceiptsData] = useState([]);
     const [selectedProjectID, setSelectedProjectID] = useState(null);
 
     useEffect(() => {
-        setReceiptsData(receiptsDataDummy)
-    }, [])
+        setDeletedReceiptsData(deletedReceiptsDataDummy)
+    })
 
     const handleRowClick = (projectID) => {
         setSelectedProjectID(projectID); // Update the selected projectID when a row is clicked
@@ -25,7 +25,7 @@ const PendingReceiptsTable = ({onDeletedReceiptsClick}) => {
                 <div className="receipt-table-head">
                     <h3>Receipts</h3>
                     <div className="deleted-receipts">
-                        <button onClick={onDeletedReceiptsClick}>Deleted Receipts</button>
+                        <button>Deleted Receipts</button>
                     </div>
                 </div>
                 <div className="receipts-table-container">
@@ -38,20 +38,20 @@ const PendingReceiptsTable = ({onDeletedReceiptsClick}) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {receiptsData.map(receipt => (
-                            <tr key={receipt.projectID} onClick={() => handleRowClick(receipt.projectID)}>
-                                <td>{receipt.projectID}</td>
-                                <td>{receipt.projectName}</td>
-                                <td>{receipt.projectType}</td>
+                            {deletedReceiptsData.map(data => (
+                            <tr key={data.projectID} onClick={() => handleRowClick(data.projectID)}>
+                                <td>{data.projectID}</td>
+                                <td>{data.projectName}</td>
+                                <td>{data.projectType}</td>
                             </tr>
                             ))}
                         </tbody>
                     </table>
                 </div>
             </div>
-            {selectedProjectID && <PendingReceiptCard projectID={selectedProjectID} receiptsData={receiptsData} onClose={handleCloseReceiptCard} />}
+            {selectedProjectID && <DeletedReceiptsCard projectID={selectedProjectID} deletedReceiptsData={deletedReceiptsData} onClose={handleCloseReceiptCard} />}
         </div>
   );
 };
 
-export default PendingReceiptsTable;
+export default DeletedReceiptsTable;
