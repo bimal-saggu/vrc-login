@@ -53,7 +53,7 @@ const MobileModal = ({ isOpen, onClose, roleType }) => {
                         <li><a href="/admin/approval"><img src={approval} alt="" /></a><a href="/admin/approval"><p>Approval</p></a></li>
                         <li><a href="/admin/receipts"><img src={receipts} alt="" /></a><a href="/admin/receipts"><p>Receipts</p></a></li>
                         <li><a href="/admin/payments"><img src={payments} alt="" /></a><a href="/admin/payments"><p>Payments</p></a></li>
-                        <li><a href="/admin/payrolls"><img src={home} alt="" /></a><a href="/admin/payrolls"><p>Payrolls</p></a></li>
+                        <li><a href="/admin/payroll"><img src={home} alt="" /></a><a href="/admin/payrolls"><p>Payrolls</p></a></li>
                         <li><a href="/admin/expenses"><img src={expenses} alt="" /></a><a href="/admin/expenses"><p>Expenses</p></a></li>
                         <li><a href="/admin/commissions"><img src={home} alt="" /></a><a href="/admin/commissions"><p>Commissions</p></a></li>
                         <li><a href="/admin/customer"><img src={customer} alt="" /></a><a href="/admin/customer"><p>Customer</p></a></li>

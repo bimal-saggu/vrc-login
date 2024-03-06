@@ -94,8 +94,8 @@ const WebMenu = ({ roleType }) => {
                       <a href=""><p>Payments</p></a>
                     </li>
                     <li>
-                      <a href=""><img src={home} alt="" /></a>
-                      <a href=""><p>Payrolls</p></a>
+                      <a href="/admin/payroll"><img src={home} alt="" /></a>
+                      <a href="/admin/payroll"><p>Payrolls</p></a>
                     </li>
                     <li>
                       <a href=""><img src={expenses} alt="" /></a>
@@ -106,8 +106,8 @@ const WebMenu = ({ roleType }) => {
                       <a href=""><p>Commissions</p></a>
                     </li>
                     <li>
-                      <a href=""><img src={customer} alt="" /></a>
-                      <a href=""><p>Customer</p></a>
+                      <a href="/admin/customer"><img src={customer} alt="" /></a>
+                      <a href="/admin/customer"><p>Customer</p></a>
                     </li>
                     <li>
                       <a href=""><img src={discount} alt="" /></a>
