@@ -5,11 +5,13 @@ import partSoldPayments from "../../../data/partSoldPayments";
 import close from '../../../assets/menuClose.svg'
 import deleteIcon from "../../../assets/delete.svg";
 import exportIcon from "../../../assets/export.svg";
+import PartPayReceiptCard from "./PartPayReceiptCard";
 
 const PartSoldTable = ({ status }) => {
     const [partSoldData, setPartSoldData] = useState([]);
     const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
     const [selectedRow, setSelectedRow] = useState(null);
+    // const [selectedRecRow, setSelectedRecRow] = useState(null);
 
     useEffect(() => {
         // Filter data based on status
@@ -36,6 +38,14 @@ const PartSoldTable = ({ status }) => {
     const handleCloseDropdown = () => {
         setSelectedRow(null);
     };
+
+    // const handleReceiptClick = (projectID) => {
+    //     setSelectedRecRow(projectID)
+    // }
+
+    // const handleCloseReceiptCard = () => {
+    //     setSelectedRecRow(false)
+    // }
 
     const renderDropdown = (projectID) => {
         const selectedProject = partSoldPayments.find(item => item.projectID === projectID);
@@ -116,6 +126,7 @@ const PartSoldTable = ({ status }) => {
                     </table>
                 </div>
             </div>
+            {/* {selectedRecRow && <PartPayReceiptCard projectID={selectedRecRow} onClose={handleCloseReceiptCard} />} */}
         </div>
   );
 };

@@ -1,60 +1,67 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './pendingReceipts.css'
 import close from '../../../assets/menuClose.svg'
+import partPayRecData from "../../../data/partPayRecData";
 
-const PartPayReceiptCard = ({ selectedProject, onClose }) => {
-  if (!selectedProject) return null;
+const PartPayReceiptCard = ({ projectID, selectedProject, onClose }) => {
+  const [receiptData, setReceiptData] = useState([]);
+
+  useEffect(() => {
+    setReceiptData(partPayRecData.find(recData => recData.projectID === projectID))
+  }, [projectID])
+
+  // if (!selectedProject) return null;
 
     const renderFields = () => {
-      const projectType = selectedProject.projectType;
+      // const projectType = selectedProject.projectType;
 
-        switch (projectType) {
+        switch (receiptData) {
           case 'Apartment':
             return (
               <>
                 <div className="rec-data-field">
                   <label htmlFor="invoiceNumber">Invoice Number</label>
-                  <input type="text" id="invoiceNumber" defaultValue={selectedProject.invoiceNumber} readOnly />
+                  <input type="text" id="invoiceNumber" defaultValue={receiptData.invoiceNumber} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="date">Date</label>
-                  <input type="text" id="date" defaultValue={selectedProject.date} readOnly />
+                  <input type="text" id="date" defaultValue={receiptData.date} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="salesPersonID">Sales Person ID</label>
-                  <input type="text" id="salesPersonID" defaultValue={selectedProject.salesPersonID} readOnly />
+                  <input type="text" id="salesPersonID" defaultValue={receiptData.salesPersonID} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="salesPersonName">Sales Person Name</label>
-                  <input type="text" id="salesPersonName" defaultValue={selectedProject.salesPersonName} readOnly />
+                  <input type="text" id="salesPersonName" defaultValue={receiptData.salesPersonName} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="clientName">Client Name</label>
-                  <input type="text" id="clientName" defaultValue={selectedProject.clientName} readOnly />
+                  <input type="text" id="clientName" defaultValue={receiptData.clientName} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="clientPhone">Client Phone</label>
-                  <input type="text" id="clientPhone" defaultValue={selectedProject.clientPhone} readOnly />
+                  <input type="text" id="clientPhone" defaultValue={receiptData.clientPhone} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="aadhaarNumber">Aadhaar Card No</label>
-                  <input type="text" id="aadhaarNumber" defaultValue={selectedProject.aadhaarNumber} readOnly />
+                  <input type="text" id="aadhaarNumber" defaultValue={receiptData.aadhaarNumber} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="projectType">Project Type</label>
-                  <input type="text" id="projectType" defaultValue={selectedProject.projectType} readOnly />
+                  <input type="text" id="projectType" defaultValue={receiptData.projectType} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="projectName">Project Name</label>
-                  <input type="text" id="projectName" defaultValue={selectedProject.projectName} readOnly />
+                  <input type="text" id="projectName" defaultValue={receiptData.projectName} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="towerNumber">Tower Number</label>
-                  <input type="text" id="towerNumber" defaultValue={selectedProject.towerNumber} readOnly />
+                  <input type="text" id="towerNumber" defaultValue={receiptData.towerNumber} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="flatNumber">Flat Number</label>
-                  <input type="text" id="flatNumber" defaultValue={selectedProject.flatNumber} readOnly />
+                  <input type="text" id="flatNumber" defaultValue={receiptData.flatNumber} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="discount">Discount %</label>
@@ -62,19 +69,19 @@ const PartPayReceiptCard = ({ selectedProject, onClose }) => {
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="priceOfProperty">Price of Property *</label>
-                  <input type="text" id="priceOfProperty" defaultValue={selectedProject.priceOfProperty} readOnly />
+                  <input type="text" id="priceOfProperty" defaultValue={receiptData.priceOfProperty} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="status">Status</label>
-                  <input type="text" id="status" defaultValue={selectedProject.status} readOnly />
+                  <input type="text" id="status" defaultValue={receiptData.status} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="dateOfPartPayment">Date of part-payment</label>
-                  <input type="text" id="dateOfPartPayment" defaultValue={selectedProject.modeOfPayment} readOnly />
+                  <input type="text" id="dateOfPartPayment" defaultValue={receiptData.modeOfPayment} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="amount">Amount</label>
-                  <input type="text" id="amount" defaultValue={selectedProject.amount} />
+                  <input type="text" id="amount" defaultValue={receiptData.amount} />
                 </div>
               </>
             );
@@ -83,43 +90,43 @@ const PartPayReceiptCard = ({ selectedProject, onClose }) => {
               <>
                 <div className="rec-data-field">
                   <label htmlFor="invoiceNumber">Invoice Number</label>
-                  <input type="text" id="invoiceNumber" defaultValue={selectedProject.invoiceNumber} readOnly />
+                  <input type="text" id="invoiceNumber" defaultValue={receiptData.invoiceNumber} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="date">Date</label>
-                  <input type="text" id="date" defaultValue={selectedProject.date} readOnly />
+                  <input type="text" id="date" defaultValue={receiptData.date} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="salesPersonID">Sales Person ID</label>
-                  <input type="text" id="salesPersonID" defaultValue={selectedProject.salesPersonID} readOnly />
+                  <input type="text" id="salesPersonID" defaultValue={receiptData.salesPersonID} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="salesPersonName">Sales Person Name</label>
-                  <input type="text" id="salesPersonName" defaultValue={selectedProject.salesPersonName} readOnly />
+                  <input type="text" id="salesPersonName" defaultValue={receiptData.salesPersonName} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="clientName">Client Name</label>
-                  <input type="text" id="clientName" defaultValue={selectedProject.clientName} readOnly />
+                  <input type="text" id="clientName" defaultValue={receiptData.clientName} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="clientPhone">Client Phone</label>
-                  <input type="text" id="clientPhone" defaultValue={selectedProject.clientPhone} readOnly />
+                  <input type="text" id="clientPhone" defaultValue={receiptData.clientPhone} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="aadhaarNumber">Aadhaar Card No</label>
-                  <input type="text" id="aadhaarNumber" defaultValue={selectedProject.aadhaarNumber} readOnly />
+                  <input type="text" id="aadhaarNumber" defaultValue={receiptData.aadhaarNumber} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="projectType">Project Type</label>
-                  <input type="text" id="projectType" defaultValue={selectedProject.projectType} readOnly />
+                  <input type="text" id="projectType" defaultValue={receiptData.projectType} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="projectName">Project Name</label>
-                  <input type="text" id="projectName" defaultValue={selectedProject.projectName} readOnly />
+                  <input type="text" id="projectName" defaultValue={receiptData.projectName} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="villaNumber">Villa Number</label>
-                  <input type="text" id="villaNumber" defaultValue={selectedProject.villaNumber} readOnly />
+                  <input type="text" id="villaNumber" defaultValue={receiptData.villaNumber} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="discount">Discount %</label>
@@ -127,19 +134,19 @@ const PartPayReceiptCard = ({ selectedProject, onClose }) => {
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="priceOfProperty">Price of Property *</label>
-                  <input type="text" id="priceOfProperty" defaultValue={selectedProject.priceOfProperty} readOnly />
+                  <input type="text" id="priceOfProperty" defaultValue={receiptData.priceOfProperty} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="status">Status</label>
-                  <input type="text" id="status" defaultValue={selectedProject.status} readOnly />
+                  <input type="text" id="status" defaultValue={receiptData.status} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="dateOfPartPayment">Date of part-payment</label>
-                  <input type="text" id="dateOfPartPayment" defaultValue={selectedProject.modeOfPayment} readOnly />
+                  <input type="text" id="dateOfPartPayment" defaultValue={receiptData.modeOfPayment} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="amount">Amount</label>
-                  <input type="text" id="amount" defaultValue={selectedProject.amount} />
+                  <input type="text" id="amount" defaultValue={receiptData.amount} />
                 </div>
                 {/* Render fields for Villas type */}
               </>
@@ -149,43 +156,43 @@ const PartPayReceiptCard = ({ selectedProject, onClose }) => {
               <>
                 <div className="rec-data-field">
                   <label htmlFor="invoiceNumber">Invoice Number</label>
-                  <input type="text" id="invoiceNumber" defaultValue={selectedProject.invoiceNumber} readOnly />
+                  <input type="text" id="invoiceNumber" defaultValue={receiptData.invoiceNumber} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="date">Date</label>
-                  <input type="text" id="date" defaultValue={selectedProject.date} readOnly />
+                  <input type="text" id="date" defaultValue={receiptData.date} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="salesPersonID">Sales Person ID</label>
-                  <input type="text" id="salesPersonID" defaultValue={selectedProject.salesPersonID} readOnly />
+                  <input type="text" id="salesPersonID" defaultValue={receiptData.salesPersonID} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="salesPersonName">Sales Person Name</label>
-                  <input type="text" id="salesPersonName" defaultValue={selectedProject.salesPersonName} readOnly />
+                  <input type="text" id="salesPersonName" defaultValue={receiptData.salesPersonName} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="clientName">Client Name</label>
-                  <input type="text" id="clientName" defaultValue={selectedProject.clientName} readOnly />
+                  <input type="text" id="clientName" defaultValue={receiptData.clientName} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="clientPhone">Client Phone</label>
-                  <input type="text" id="clientPhone" defaultValue={selectedProject.clientPhone} readOnly />
+                  <input type="text" id="clientPhone" defaultValue={receiptData.clientPhone} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="aadhaarNumber">Aadhaar Card No</label>
-                  <input type="text" id="aadhaarNumber" defaultValue={selectedProject.aadhaarNumber} readOnly />
+                  <input type="text" id="aadhaarNumber" defaultValue={receiptData.aadhaarNumber} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="projectType">Project Type</label>
-                  <input type="text" id="projectType" defaultValue={selectedProject.projectType} readOnly />
+                  <input type="text" id="projectType" defaultValue={receiptData.projectType} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="projectName">Project Name</label>
-                  <input type="text" id="projectName" defaultValue={selectedProject.projectName} readOnly />
+                  <input type="text" id="projectName" defaultValue={receiptData.projectName} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="plotNumber">Plot Number</label>
-                  <input type="text" id="plotNumber" defaultValue={selectedProject.plotNumber} readOnly />
+                  <input type="text" id="plotNumber" defaultValue={receiptData.plotNumber} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="discount">Discount %</label>
@@ -193,19 +200,19 @@ const PartPayReceiptCard = ({ selectedProject, onClose }) => {
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="priceOfProperty">Price of Property *</label>
-                  <input type="text" id="priceOfProperty" defaultValue={selectedProject.priceOfProperty} readOnly />
+                  <input type="text" id="priceOfProperty" defaultValue={receiptData.priceOfProperty} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="status">Status</label>
-                  <input type="text" id="status" defaultValue={selectedProject.status} readOnly />
+                  <input type="text" id="status" defaultValue={receiptData.status} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="dateOfPartPayment">Date of part-payment</label>
-                  <input type="text" id="dateOfPartPayment" defaultValue={selectedProject.modeOfPayment} readOnly />
+                  <input type="text" id="dateOfPartPayment" defaultValue={receiptData.modeOfPayment} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="amount">Amount</label>
-                  <input type="text" id="amount" defaultValue={selectedProject.amount} />
+                  <input type="text" id="amount" defaultValue={receiptData.amount} />
                 </div>
                 {/* Render fields for Plots type */}
               </>
@@ -215,47 +222,47 @@ const PartPayReceiptCard = ({ selectedProject, onClose }) => {
               <>
                 <div className="rec-data-field">
                   <label htmlFor="invoiceNumber">Invoice Number</label>
-                  <input type="text" id="invoiceNumber" defaultValue={selectedProject.invoiceNumber} readOnly />
+                  <input type="text" id="invoiceNumber" defaultValue={receiptData.invoiceNumber} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="date">Date</label>
-                  <input type="text" id="date" defaultValue={selectedProject.date} readOnly />
+                  <input type="text" id="date" defaultValue={receiptData.date} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="salesPersonID">Sales Person ID</label>
-                  <input type="text" id="salesPersonID" defaultValue={selectedProject.salesPersonID} readOnly />
+                  <input type="text" id="salesPersonID" defaultValue={receiptData.salesPersonID} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="salesPersonName">Sales Person Name</label>
-                  <input type="text" id="salesPersonName" defaultValue={selectedProject.salesPersonName} readOnly />
+                  <input type="text" id="salesPersonName" defaultValue={receiptData.salesPersonName} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="clientName">Client Name</label>
-                  <input type="text" id="clientName" defaultValue={selectedProject.clientName} readOnly />
+                  <input type="text" id="clientName" defaultValue={receiptData.clientName} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="clientPhone">Client Phone</label>
-                  <input type="text" id="clientPhone" defaultValue={selectedProject.clientPhone} readOnly />
+                  <input type="text" id="clientPhone" defaultValue={receiptData.clientPhone} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="aadhaarNumber">Aadhaar Card No</label>
-                  <input type="text" id="aadhaarNumber" defaultValue={selectedProject.aadhaarNumber} readOnly />
+                  <input type="text" id="aadhaarNumber" defaultValue={receiptData.aadhaarNumber} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="projectType">Project Type</label>
-                  <input type="text" id="projectType" defaultValue={selectedProject.projectType} readOnly />
+                  <input type="text" id="projectType" defaultValue={receiptData.projectType} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="projectName">Project Name</label>
-                  <input type="text" id="projectName" defaultValue={selectedProject.projectName} readOnly />
+                  <input type="text" id="projectName" defaultValue={receiptData.projectName} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="plotNumber">Plot Number</label>
-                  <input type="text" id="plotNumber" defaultValue={selectedProject.plotNumber} readOnly />
+                  <input type="text" id="plotNumber" defaultValue={receiptData.plotNumber} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="sqYards">Square Yards</label>
-                  <input type="text" id="sqYards" defaultValue={selectedProject.sqYards} readOnly />
+                  <input type="text" id="sqYards" defaultValue={receiptData.sqYards} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="discount">Discount %</label>
@@ -263,19 +270,19 @@ const PartPayReceiptCard = ({ selectedProject, onClose }) => {
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="priceOfProperty">Price of Property *</label>
-                  <input type="text" id="priceOfProperty" defaultValue={selectedProject.priceOfProperty} readOnly />
+                  <input type="text" id="priceOfProperty" defaultValue={receiptData.priceOfProperty} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="status">Status</label>
-                  <input type="text" id="status" defaultValue={selectedProject.status} readOnly />
+                  <input type="text" id="status" defaultValue={receiptData.status} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="dateOfPartPayment">Date of part-payment</label>
-                  <input type="text" id="dateOfPartPayment" defaultValue={selectedProject.modeOfPayment} readOnly />
+                  <input type="text" id="dateOfPartPayment" defaultValue={receiptData.modeOfPayment} readOnly />
                 </div>
                 <div className="rec-data-field">
                   <label htmlFor="amount">Amount</label>
-                  <input type="text" id="amount" defaultValue={selectedProject.amount} />
+                  <input type="text" id="amount" defaultValue={receiptData.amount} />
                 </div>
                 {/* Render fields for Farm land type */}
               </>

@@ -2,11 +2,11 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
-/* body {
+body {
   margin: 0;
   padding: 0;
-  background-color: #f0f1f3;
-} */
+  /* background-color: #f0f1f3; */
+}
 
 .log {
   width: 360px;

@@ -1,5 +1,7 @@
 const partPayRecData = [
     {
+      projectID: 20001,
+      receiptID: 1,
       invoiceNumber: "INV12345",
       date: "2024-03-05",
       salesPersonID: "SP001",
@@ -18,6 +20,8 @@ const partPayRecData = [
       amount: "45000"
     },
     {
+      projectID: 20002,
+      receiptID: 2,
       invoiceNumber: "INV67890",
       date: "2024-03-01",
       salesPersonID: "SP002",
@@ -35,6 +39,8 @@ const partPayRecData = [
       amount: "60000"
     },
     {
+      projectID: 20003,
+      receiptID: 3,
       invoiceNumber: "INV54321",
       date: "2024-03-03",
       salesPersonID: "SP003",

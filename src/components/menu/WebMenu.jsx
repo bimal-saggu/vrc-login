@@ -110,12 +110,12 @@ const WebMenu = ({ roleType }) => {
                       <a href="/admin/customer"><p>Customer</p></a>
                     </li>
                     <li>
-                      <a href=""><img src={discount} alt="" /></a>
-                      <a href=""><p>Discount</p></a>
+                      <a href="/admin/discount"><img src={discount} alt="" /></a>
+                      <a href="/admin/discount"><p>Discount</p></a>
                     </li>
                     <li>
-                      <a href=""><img src={miscel} alt="" /></a>
-                      <a href=""><p>Miscellaneous</p></a>
+                      <a href="/admin/miscellaneous"><img src={miscel} alt="" /></a>
+                      <a href="/admin/miscellaneous"><p>Miscellaneous</p></a>
                     </li>
                     <li>
                       <a href=""><img src={history} alt="" /></a>

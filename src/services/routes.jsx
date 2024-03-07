@@ -9,8 +9,10 @@ import History from "../components/sales-channel/History";
 import ChannelDash from "../pages/ChannelDash";
 import Pending from "../components/admin/approval/Pending";
 import PendingReceipts from "../components/admin/Receipts/PendingReceipts";
-import PayrollCard from '../components/admin/Receipts/PayRollCard'
-import Customer from "../components/admin/Receipts/Customer";
+import PayRollCard from "../components/admin/payroll/PayRollCard";
+import Customer from "../components/admin/customer/Customer";
+import MiscellaneousCard from '../components/admin/miscellaneous/MiscellaneousCard'
+import Discount from "../components/admin/discount/Discount";
 
 const router = createBrowserRouter([
   {
@@ -22,8 +24,10 @@ const router = createBrowserRouter([
       { path: "/admin/dashboard", element:  <AdminDash />},
       { path: "/admin/approvals", element:  <Pending />},
       { path: "/admin/receipts", element:  <PendingReceipts />},
-      { path: "/admin/payroll", element:  <PayrollCard />},
+      { path: "/admin/payroll", element:  <PayRollCard />},
       { path: "/admin/customer", element:  <Customer />},
+      { path: "/admin/discount", element:  <Discount />},
+      { path: "/admin/miscellaneous", element:  <MiscellaneousCard />},
       { path: "/sales/dashboard", element:  <SalesDash />},
       { path: "/sales/onBoard", element:  <OnBoarding />},
       { path: "/sales/history", element:  <History />},
