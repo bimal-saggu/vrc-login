@@ -13,6 +13,9 @@ import PayRollCard from "../components/admin/payroll/PayRollCard";
 import Customer from "../components/admin/customer/Customer";
 import MiscellaneousCard from '../components/admin/miscellaneous/MiscellaneousCard'
 import Discount from "../components/admin/discount/Discount";
+import SpHistory from "../components/admin/sp-history/SpHistory";
+import CpHistory from "../components/admin/cp-history/CpHistory";
+import LeadGeneration from "../components/admin/lead-generation/LeadGeneration";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +31,9 @@ const router = createBrowserRouter([
       { path: "/admin/customer", element:  <Customer />},
       { path: "/admin/discount", element:  <Discount />},
       { path: "/admin/miscellaneous", element:  <MiscellaneousCard />},
+      { path: "/admin/sp-history", element:  <SpHistory />},
+      { path: "/admin/cp-history", element:  <CpHistory />},
+      { path: "/admin/lead-generation", element:  <LeadGeneration />},
       { path: "/sales/dashboard", element:  <SalesDash />},
       { path: "/sales/onBoard", element:  <OnBoarding />},
       { path: "/sales/history", element:  <History />},

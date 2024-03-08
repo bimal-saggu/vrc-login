@@ -14,6 +14,7 @@ const History = () => {
     const [clients, setClients] = useState([]);
     const [selectedHistory, setSelectedHistory] = useState(null);
     const [selectedRole, setSelectedRole] = useState('Sales Person');
+    const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
 
   const handleRoleChange = (e) => {
     setSelectedRole(e.target.value);
@@ -27,6 +28,18 @@ const History = () => {
     const toggleModal = () => {
         setIsOpen(!isOpen); // Toggle modal visibility
     };
+
+    useEffect(() => {
+        const handleResize = () => {
+          setViewportWidth(window.innerWidth);
+        };
+      
+        window.addEventListener('resize', handleResize); // Listen for viewport width changes
+      
+        return () => {
+          window.removeEventListener('resize', handleResize); // Cleanup
+        };
+    }, []);
 
     const handleHistoryClick = (projectID) => {
         const history = historyData.find(item => item.projectID === projectID);
@@ -72,8 +85,8 @@ const History = () => {
                                 <th>Client Name</th>
                                 <th>Project ID</th>
                                 <th>Project Type</th>
-                                <th>Total Commission</th>
-                                <th>Commission Received Till Now</th>
+                                {viewportWidth >= 1024 && <th>Total Commission</th>}
+                                {viewportWidth >= 1024 && <th>Commission Received Till Now</th>}
                             </tr>
                         </thead>
                         <tbody>
@@ -82,8 +95,8 @@ const History = () => {
                                     <td>{client.clientName}</td>
                                     <td>{client.projectID}</td>
                                     <td>{client.projectType}</td>
-                                    <td>{client.totalCommission}</td>
-                                    <td>{client.commissionReceived}</td>
+                                    {viewportWidth >= 1024 && <td>{client.totalCommission}</td>}
+                                    {viewportWidth >= 1024 && <td>{client.commissionReceived}</td>}
                                 </tr>
                             ))}
                         </tbody>

@@ -14,10 +14,10 @@
   border-collapse: collapse;
 }
 
-.his-table-container table th:nth-child(n + 4),
+/* .his-table-container table th:nth-child(n + 4),
 table td:nth-child(n + 4) {
   display: none;
-}
+} */
 
 @media screen and (min-width: 1024px) {
   .his-table {
