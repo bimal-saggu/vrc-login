@@ -2,8 +2,8 @@ import React from "react";
 import logo from '../../../assets/logo.svg'
 import close from '../../../assets/menuClose.svg'
 
-const CommissionCard = ({commissionHolderId, commissionCardDetails, onClose}) => {
-    const cardData = commissionCardDetails.find(data => data.commissionHolderId === commissionHolderId);
+const CommissionCard = ({commissionHolderID, commissionCardDetails, onClose}) => {
+    const cardData = commissionCardDetails.find(data => data.commissionHolderID === commissionHolderID);
     console.log(cardData);
     const commissionLeft = (cardData.totalCommission - cardData.commissionReceived);
 

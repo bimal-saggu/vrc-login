@@ -1,0 +1,58 @@
+.com-type {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+
+.com-type-btn button {
+  background: #1366d9;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  width: 103px;
+}
+
+/* validation Table */
+
+.val-table-container {
+  margin-top: 30px;
+}
+
+.val-table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Sold Card */
+
+.com-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.com-close button {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  border-radius: 4px;
+  border: 1px solid #707070;
+  background: #989898;
+  padding: 10px 20px;
+}
+
+.com-submit button {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  border-radius: 4px;
+  border: 1px solid #707070;
+  background: #1366d9;
+  padding: 10px 20px;
+}
