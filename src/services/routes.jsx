@@ -16,6 +16,7 @@ import Discount from "../components/admin/discount/Discount";
 import SpHistory from "../components/admin/sp-history/SpHistory";
 import CpHistory from "../components/admin/cp-history/CpHistory";
 import LeadGeneration from "../components/admin/lead-generation/LeadGeneration";
+import Expenses from "../components/admin/expenses/Expenses";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
       { path: "/admin/approvals", element:  <Pending />},
       { path: "/admin/receipts", element:  <PendingReceipts />},
       { path: "/admin/payroll", element:  <PayRollCard />},
+      { path: "/admin/expenses", element:  <Expenses />},
       { path: "/admin/customer", element:  <Customer />},
       { path: "/admin/discount", element:  <Discount />},
       { path: "/admin/miscellaneous", element:  <MiscellaneousCard />},

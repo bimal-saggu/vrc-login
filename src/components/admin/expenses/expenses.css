@@ -1,0 +1,56 @@
+.expense-type {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+
+.expense-type-btn button {
+  background: #1366d9;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  width: 100px;
+}
+
+/* Commission Table */
+
+.com-table-container {
+  margin-top: 30px;
+}
+
+.com-table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.holder-id img {
+  width: 10px;
+  height: 10px;
+  margin-left: 20px;
+}
+
+/* Salary Table */
+
+.salary-table-container {
+  margin-top: 30px;
+}
+
+.salary-table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Miscellaneous Table */
+
+.miscel-table-container {
+  margin-top: 30px;
+}
+
+.miscel-table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
