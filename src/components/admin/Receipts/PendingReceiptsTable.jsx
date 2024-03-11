@@ -24,9 +24,9 @@ const PendingReceiptsTable = ({onDeletedReceiptsClick}) => {
             <div className="receipt-table-sec">
                 <div className="receipt-table-head">
                     <h3>Receipts</h3>
-                    <div className="deleted-receipts">
-                        <button onClick={onDeletedReceiptsClick}>Deleted Receipts</button>
-                    </div>
+                        <div className="deleted-receipts">
+                            <button onClick={onDeletedReceiptsClick}>Deleted Receipts</button>
+                        </div>
                 </div>
                 <div className="receipts-table-container">
                     <table>

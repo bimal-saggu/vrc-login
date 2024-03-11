@@ -6,6 +6,7 @@ import MobileModal from "../../menu/MobileModal";
 import PendingReceiptsTable from "./PendingReceiptsTable";
 import PartSoldTable from "./PartSoldTable";
 import DeletedReceiptsTable from "./DeletedReceiptsTable";
+import SoldTable from "./SoldTable";
 
 const PendingReceipts = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -50,7 +51,8 @@ const PendingReceipts = () => {
             </div>
         </div>
         {status === 'Pending' && <PendingReceiptsTable status={status} onDeletedReceiptsClick={handleDeletedReceiptsClick} />}
-        {(status === 'Part-Payment' || status === 'Sold') && <PartSoldTable status={status} />}
+        {status === 'Part-Payment' && <PartSoldTable />}
+        {status === 'Sold' && <SoldTable />}
         {status === "Deleted" && <DeletedReceiptsTable />}
         <MobileModal isOpen={isOpen} onClose={toggleModal}/>
     </div>

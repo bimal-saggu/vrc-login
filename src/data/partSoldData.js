@@ -11,7 +11,7 @@ const partSoldDataDummy = [
     projectName: "Green Valley Villas",
     projectType: "Villas",
     clientName: "Jane Smith",
-    status: "Sold"
+    status: "Part-Payment"
   },
   {
     projectID: 20003,
@@ -32,41 +32,6 @@ const partSoldDataDummy = [
     projectName: "Golden Palms Villas",
     projectType: "Villas",
     clientName: "Michael Williams",
-    status: "Sold"
-  },
-  {
-    projectID: 20006,
-    projectName: "Beachfront Condos",
-    projectType: "Apartments",
-    clientName: "Emily Davis",
-    status: "Sold"
-  },
-  {
-    projectID: 20007,
-    projectName: "Mountain View Estates",
-    projectType: "Farm lands",
-    clientName: "David Martinez",
-    status: "Part-Payment",
-  },
-  {
-    projectID: 20008,
-    projectName: "Cityscape Towers",
-    projectType: "Villas",
-    clientName: "Sophia Rodriguez",
-    status: "Part-Payment",
-  },
-  {
-    projectID: 20009,
-    projectName: "Riverfront Residences",
-    projectType: "Plots",
-    clientName: "Daniel Thompson",
-    status: "Sold"
-  },
-  {
-    projectID: 20010,
-    projectName: "Parkside Bungalows",
-    projectType: "Plots",
-    clientName: "Olivia Harris",
     status: "Part-Payment"
   }
 ];

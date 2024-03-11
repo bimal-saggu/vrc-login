@@ -399,8 +399,8 @@ const PendingReceiptCard = ({ projectID, receiptsData, onClose }) => {
                     <button>Delete</button>
                 </div>
                 <div className="rec-sec-actions">
-                    <button className="save">Save</button>
-                    <button className="export">Export</button>
+                    <div className="save"><button>Save</button></div>
+                    <div className="export-btn"><button>Export</button></div>
                 </div>
             </div>
         </div>

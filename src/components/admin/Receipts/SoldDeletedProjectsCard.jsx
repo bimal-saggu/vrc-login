@@ -158,6 +158,7 @@ const PartPayReceiptCard = ({ receiptID, partPaymentsData, onClose }) => {
                 type="text"
                 id="amount"
                 defaultValue={partPaymentData.amount}
+                readOnly
               />
             </div>
           </>
@@ -297,6 +298,7 @@ const PartPayReceiptCard = ({ receiptID, partPaymentsData, onClose }) => {
                 type="text"
                 id="amount"
                 defaultValue={partPaymentData.amount}
+                readOnly
               />
             </div>
             {/* Render fields for Villas type */}
@@ -437,6 +439,7 @@ const PartPayReceiptCard = ({ receiptID, partPaymentsData, onClose }) => {
                 type="text"
                 id="amount"
                 defaultValue={partPaymentData.amount}
+                readOnly
               />
             </div>
             {/* Render fields for Plots type */}
@@ -586,6 +589,7 @@ const PartPayReceiptCard = ({ receiptID, partPaymentsData, onClose }) => {
                 type="text"
                 id="amount"
                 defaultValue={partPaymentData.amount}
+                readOnly
               />
             </div>
             {/* Render fields for Farm land type */}
@@ -606,15 +610,9 @@ const PartPayReceiptCard = ({ receiptID, partPaymentsData, onClose }) => {
           <h3>Receipt</h3>
         </div>
         <div className="rec-data">{renderFields()}</div>
-        <div className="rec-actions">
-                <div className="rec-delete">
-                    <button>Delete</button>
-                </div>
-                <div className="rec-sec-actions">
-                    <div className="save"><button>Save</button></div>
-                    <div className="export-btn"><button>Export</button></div>
-                </div>
-            </div>
+        <div className="rec-close">
+            <button onClick={onClose}>Close</button>
+        </div>
       </div>
     </div>
   );

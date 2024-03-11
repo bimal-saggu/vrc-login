@@ -4,9 +4,15 @@ import logo from '../../../assets/logo.svg';
 import menu from '../../../assets/menu.svg'
 import manage from '../../../assets/manage.svg'
 import MobileModal from "../../menu/MobileModal";
+import ManageRoleInput from "./ManageRoleInput";
 
 const PayRollCard = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [showManageInput, setShowManageInput] = useState(false)
+
+    const toggleManageInput = () => {
+        setShowManageInput(!showManageInput); // Toggle ManageRoleInput visibility
+    };
 
     const toggleModal = () => {
         setIsOpen(!isOpen); // Toggle modal visibility
@@ -29,7 +35,7 @@ const PayRollCard = () => {
             <div className="payroll-sec">
                 <div className="payroll-head">
                     <h3>Payroll</h3>
-                    <div className="manage-role">
+                    <div className="manage-role" onClick={toggleManageInput}>
                     {/* Click function need to be added */}
                         <img src={manage} alt="" />
                         <p>Manage Role</p>
@@ -68,6 +74,7 @@ const PayRollCard = () => {
                 </div>
             </div>
         </div>
+        {showManageInput && <ManageRoleInput />}
         <MobileModal isOpen={isOpen} onClose={toggleModal}/>
     </div>
   );

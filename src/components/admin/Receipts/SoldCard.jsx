@@ -2,7 +2,7 @@ import React from "react";
 import "./pendingReceipts.css";
 import close from "../../../assets/menuClose.svg";
 
-const PartPayReceiptCard = ({ receiptID, partPaymentsData, onClose }) => {
+const SoldCard = ({ receiptID, partPaymentsData, onClose }) => {
   console.log(receiptID)
   console.log(partPaymentsData)
   const partPaymentData = partPaymentsData.find(
@@ -158,6 +158,7 @@ const PartPayReceiptCard = ({ receiptID, partPaymentsData, onClose }) => {
                 type="text"
                 id="amount"
                 defaultValue={partPaymentData.amount}
+                readOnly
               />
             </div>
           </>
@@ -297,6 +298,7 @@ const PartPayReceiptCard = ({ receiptID, partPaymentsData, onClose }) => {
                 type="text"
                 id="amount"
                 defaultValue={partPaymentData.amount}
+                readOnly
               />
             </div>
             {/* Render fields for Villas type */}
@@ -437,6 +439,7 @@ const PartPayReceiptCard = ({ receiptID, partPaymentsData, onClose }) => {
                 type="text"
                 id="amount"
                 defaultValue={partPaymentData.amount}
+                readOnly
               />
             </div>
             {/* Render fields for Plots type */}
@@ -586,6 +589,7 @@ const PartPayReceiptCard = ({ receiptID, partPaymentsData, onClose }) => {
                 type="text"
                 id="amount"
                 defaultValue={partPaymentData.amount}
+                readOnly
               />
             </div>
             {/* Render fields for Farm land type */}
@@ -607,17 +611,16 @@ const PartPayReceiptCard = ({ receiptID, partPaymentsData, onClose }) => {
         </div>
         <div className="rec-data">{renderFields()}</div>
         <div className="rec-actions">
-                <div className="rec-delete">
-                    <button>Delete</button>
-                </div>
-                <div className="rec-sec-actions">
-                    <div className="save"><button>Save</button></div>
-                    <div className="export-btn"><button>Export</button></div>
-                </div>
-            </div>
+        <div className="sold-close">
+          <button onClick={onClose}>Close</button>
+        </div>
+        <div className="sold-export">
+          <button>Export</button>
+        </div>
+        </div>
       </div>
     </div>
   );
 };
 
-export default PartPayReceiptCard;
+export default SoldCard;
