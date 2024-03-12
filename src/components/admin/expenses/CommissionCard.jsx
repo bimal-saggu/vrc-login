@@ -66,7 +66,7 @@ const CommissionCard = ({commissionHolderID, commissionCardDetails, onClose}) =>
                 </div>
                 <div className="sp-data-field">
                   <label htmlFor="priceOfProperty">Price of Property</label>
-                  <input type="text" id="priceOfProperty" defaultValue={cardData.priceOfProperty} />
+                  <input type="text" id="priceOfProperty" defaultValue={cardData.priceOfProperty} readOnly />
                 </div>
                 <div className="sp-data-field">
                   <label htmlFor="status">Status</label>
@@ -147,7 +147,7 @@ const CommissionCard = ({commissionHolderID, commissionCardDetails, onClose}) =>
                 </div>
                 <div className="sp-data-field">
                   <label htmlFor="priceOfProperty">Price of Property</label>
-                  <input type="text" id="priceOfProperty" defaultValue={cardData.priceOfProperty} />
+                  <input type="text" id="priceOfProperty" defaultValue={cardData.priceOfProperty} readOnly />
                 </div>
                 <div className="sp-data-field">
                   <label htmlFor="status">Status</label>
@@ -229,7 +229,7 @@ const CommissionCard = ({commissionHolderID, commissionCardDetails, onClose}) =>
                 </div>
                 <div className="sp-data-field">
                   <label htmlFor="priceOfProperty">Price of Property</label>
-                  <input type="text" id="priceOfProperty" defaultValue={cardData.priceOfProperty} />
+                  <input type="text" id="priceOfProperty" defaultValue={cardData.priceOfProperty} readOnly />
                 </div>
                 <div className="sp-data-field">
                   <label htmlFor="status">Status</label>
@@ -315,7 +315,7 @@ const CommissionCard = ({commissionHolderID, commissionCardDetails, onClose}) =>
                 </div>
                 <div className="sp-data-field">
                   <label htmlFor="priceOfProperty">Price of Property</label>
-                  <input type="text" id="priceOfProperty" defaultValue={cardData.priceOfProperty} />
+                  <input type="text" id="priceOfProperty" defaultValue={cardData.priceOfProperty} readOnly />
                 </div>
                 <div className="sp-data-field">
                   <label htmlFor="status">Status</label>

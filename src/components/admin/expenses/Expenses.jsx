@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import './/expenses.css'
 import logo from '../../../assets/logo.svg';
-import menu from '../../../assets/menu.svg'
+import menu from '../../../assets/menu.svg';
+import leadExport from '../../../assets/export.svg'
 import MobileModal from "../../menu/MobileModal";
 import CommissionTable from "./CommissionTable";
 import SalaryTable from "./SalaryTable";
 import MiscellaneousTable from "./MiscellaneousTable";
+import NavBar from '../../NavBar';
+import WebMenu from '../../menu/WebMenu';
 
 const Expenses = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -33,19 +36,31 @@ const Expenses = () => {
             <img src={menu} alt="" onClick={toggleModal}/>
         </div >
         <div className="expense-type">
-            <div className="expense-type-btn">
-                <button style={{ backgroundColor: selectedButton === 'Commission' ? '#1366d9' : '' }} onClick={() => handleButtonClick('Commission')}>Commission</button>
+            <div className="expense-btn-layout">
+                <div className="expense-type-btn">
+                    <button style={{ backgroundColor: selectedButton === 'Commission' ? '#1366d9' : '' }} onClick={() => handleButtonClick('Commission')}>Commission</button>
+                </div>
+                <div className="expense-type-btn">
+                    <button style={{ backgroundColor: selectedButton === 'Salary' ? '#1366d9' : '' }} onClick={() => handleButtonClick('Salary')}>Salary</button>
+                </div>
+                <div className="expense-type-btn">
+                    <button style={{ backgroundColor: selectedButton === 'Miscellaneous' ? '#1366d9' : '' }} onClick={() => handleButtonClick('Miscellaneous')}>Miscellaneous</button>
+                </div>
             </div>
-            <div className="expense-type-btn">
-                <button style={{ backgroundColor: selectedButton === 'Salary' ? '#1366d9' : '' }} onClick={() => handleButtonClick('Salary')}>Salary</button>
-            </div>
-            <div className="expense-type-btn">
-                <button style={{ backgroundColor: selectedButton === 'Miscellaneous' ? '#1366d9' : '' }} onClick={() => handleButtonClick('Miscellaneous')}>Miscellaneous</button>
-            </div>
+            {selectedButton === 'Salary' || selectedButton === 'Miscellaneous' ? (
+                <div className="ex-export-sec">
+                    <div className="cp-export">
+                        <img src={leadExport} alt="" />
+                        <p>Export</p>
+                    </div>
+                </div>
+            ) : null}
         </div>
         {selectedButton === 'Commission' && <CommissionTable />}
         {selectedButton === 'Salary' && <SalaryTable />}
         {selectedButton === 'Miscellaneous' && <MiscellaneousTable />}
+        <NavBar />
+        <WebMenu />
         <MobileModal isOpen={isOpen} onClose={toggleModal}/>
     </div>
   );

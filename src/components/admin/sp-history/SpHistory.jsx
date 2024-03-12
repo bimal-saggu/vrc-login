@@ -3,11 +3,14 @@ import './/spHistory.css'
 import logo from '../../../assets/logo.svg';
 import menu from '../../../assets/menu.svg';
 import close from '../../../assets/menuClose.svg';
+import leadExport from '../../../assets/export.svg'
 import MobileModal from "../../menu/MobileModal";
 import spHistoryData from '../../../data/spHistoryData'
 import spClientData from "../../../data/spClientData";
 import SpHistoryCard from "./SpHistoryCard";
 import spHistoryCardData from "../../../data/spHistoryCardData";
+import NavBar from "../../NavBar";
+import WebMenu from "../../menu/WebMenu";
 
 const SpHistory = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -106,6 +109,12 @@ const SpHistory = () => {
             <a href=""><img src={logo} alt="" /></a>
             <img src={menu} alt="" onClick={toggleModal}/>
         </div >
+        <div className="cp-export-sec">
+        <div className="cp-export">
+          <img src={leadExport} alt="" />
+          <p>Export</p>
+        </div>
+      </div>
         <div className="sp-table-container">
                 <table>
                     <thead>
@@ -128,6 +137,8 @@ const SpHistory = () => {
                     </tbody>
                 </table>
             </div>
+            <NavBar />
+            <WebMenu />
             <MobileModal isOpen={isOpen} onClose={toggleModal}/>
             {selectedSalesPersonId && <SpHistoryCard salesPersonID={selectedSalesPersonId} spHistoryCardDetails={spHistoryCardDetails} onClose={handleCloseSpHistoryCard} />}
     </div>

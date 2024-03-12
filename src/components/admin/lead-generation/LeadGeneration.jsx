@@ -4,6 +4,8 @@ import logo from '../../../assets/logo.svg';
 import menu from '../../../assets/menu.svg';
 import leadExport from '../../../assets/leadExport.svg';
 import MobileModal from "../../menu/MobileModal";
+import NavBar from '../../NavBar';
+import WebMenu from '../../menu/WebMenu';
 import leadGenData from '../../../data/leaGenData'
 
 const LeadGeneration = () => {
@@ -53,6 +55,8 @@ const LeadGeneration = () => {
           </tbody>
         </table>
       </div>
+      <NavBar />
+      <WebMenu />
       <MobileModal isOpen={isOpen} onClose={toggleModal}/>
     </div>
   );

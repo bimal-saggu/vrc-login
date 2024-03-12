@@ -3,11 +3,14 @@ import './/cpHistory.css'
 import logo from '../../../assets/logo.svg';
 import menu from '../../../assets/menu.svg';
 import close from '../../../assets/menuClose.svg';
+import leadExport from '../../../assets/export.svg'
 import MobileModal from "../../menu/MobileModal";
 import cpHistoryData from '../../../data/cpHistoryData'
 import cpClientData from '../../../data/cpClientData'
 import CpHistoryCard from "./CpHistoryCard";
 import cpHistoryCardData from "../../../data/cpHistoryCardData";
+import NavBar from "../../NavBar";
+import WebMenu from "../../menu/WebMenu";
 
 const CpHistory = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -106,6 +109,12 @@ const CpHistory = () => {
             <a href=""><img src={logo} alt="" /></a>
             <img src={menu} alt="" onClick={toggleModal}/>
         </div >
+        <div className="cp-export-sec">
+        <div className="cp-export">
+          <img src={leadExport} alt="" />
+          <p>Export</p>
+        </div>
+      </div>
         <div className="cp-table-container">
                 <table>
                     <thead>
@@ -128,6 +137,8 @@ const CpHistory = () => {
                     </tbody>
                 </table>
             </div>
+            <NavBar />
+            <WebMenu />
             <MobileModal isOpen={isOpen} onClose={toggleModal}/>
             {selectedChannelPartnerId && <CpHistoryCard channelPartnerID={selectedChannelPartnerId} cpHistoryCardDetails={cpHistoryCardDetails} onClose={handleCloseSpHistoryCard} />}
     </div>

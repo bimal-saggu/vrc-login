@@ -72,3 +72,37 @@
   background: #1366d9;
   padding: 10px 25px;
 }
+
+/* Responsive */
+
+@media screen and (min-width: 1024px) {
+  .miscel {
+    width: 600px;
+    border-radius: 20px;
+    background: #fff;
+    position: fixed; /* Keep the modal fixed */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-30%, -45%);
+    margin: 10px;
+  }
+  .miscel-head h3 {
+    font-size: 24px;
+  }
+  .miscel-form-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  .miscel-form-field label {
+    font-size: 20px;
+    width: 120px;
+  }
+  .miscel-form-field input {
+    font-size: 20px;
+    margin: 0;
+    border: 1px solid #000000;
+  }
+}

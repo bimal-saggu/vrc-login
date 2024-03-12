@@ -3,6 +3,8 @@ import './/miscellaneous.css'
 import logo from '../../../assets/logo.svg';
 import menu from '../../../assets/menu.svg'
 import MobileModal from "../../menu/MobileModal";
+import NavBar from '../../NavBar';
+import WebMenu from "../../menu/WebMenu";
 
 const MiscellaneousCard = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -52,6 +54,8 @@ const MiscellaneousCard = () => {
                 </div>
             </div>
         </div>
+        <NavBar />
+        <WebMenu />
         <MobileModal isOpen={isOpen} onClose={toggleModal}/>
     </div>
   );

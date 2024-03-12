@@ -223,7 +223,7 @@ const DiscountCard = ({ projectID, onClose }) => {
                 <img src={close} alt="Close card" onClick={onClose}/>
             </div>
             <div className="disc-head">
-                <h3>Receipt</h3>
+                <h3>Discount</h3>
             </div>
             <div className="disc-data">
                 {renderFields()}

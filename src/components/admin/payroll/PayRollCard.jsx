@@ -4,6 +4,8 @@ import logo from '../../../assets/logo.svg';
 import menu from '../../../assets/menu.svg'
 import manage from '../../../assets/manage.svg'
 import MobileModal from "../../menu/MobileModal";
+import NavBar from '../../NavBar';
+import WebMenu from '../../menu/WebMenu';
 import ManageRoleInput from "./ManageRoleInput";
 
 const PayRollCard = () => {
@@ -75,6 +77,8 @@ const PayRollCard = () => {
             </div>
         </div>
         {showManageInput && <ManageRoleInput />}
+        <NavBar />
+        <WebMenu />
         <MobileModal isOpen={isOpen} onClose={toggleModal}/>
     </div>
   );

@@ -3,6 +3,8 @@ import './/payments.css'
 import logo from '../../../assets/logo.svg';
 import menu from '../../../assets/menu.svg'
 import MobileModal from "../../menu/MobileModal";
+import NavBar from '../../NavBar';
+import WebMenu from '../../menu/WebMenu';
 import PartPaymentsTable from "./PartPaymentsTable";
 import BlockedTable from "./BlockedTable";
 
@@ -41,6 +43,8 @@ const Payments = () => {
         </div>
         {selectedButton === 'Part Payments' && <PartPaymentsTable />}
         {selectedButton === 'Blocked' && <BlockedTable />}
+        <NavBar />
+        <WebMenu />
         <MobileModal isOpen={isOpen} onClose={toggleModal}/>
     </div>
   );

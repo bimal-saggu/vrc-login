@@ -165,3 +165,9 @@ select:focus {
     display: none;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  body {
+    background: #f0f1f3;
+  }
+}

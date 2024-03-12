@@ -419,7 +419,7 @@ const CustomerCard = ({projectID, customers, onClose}) => {
                 <img src={close} alt="Close card" onClick={onClose}/>
             </div>
             <div className="cus-head">
-                <h3>Receipt</h3>
+                <h3>Customer</h3>
             </div>
             <div className="cus-data">
                 {renderFields()}

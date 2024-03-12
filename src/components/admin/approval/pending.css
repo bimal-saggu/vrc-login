@@ -15,9 +15,17 @@
   padding: 10px 15px;
 }
 
+.approval-head {
+  margin-left: 20px;
+}
+
 .approval-table-container table {
   width: 100%;
   border-collapse: collapse;
+}
+
+.approval-table-container tbody tr {
+  border-top: 20px solid #fff;
 }
 
 /* Pending Approval Card */
@@ -110,4 +118,50 @@ select {
 
 .accept button {
   background: #338136;
+}
+
+/* Responsive */
+
+@media screen and (min-width: 1024px) {
+  .approval-type {
+    display: flex;
+    justify-content: start;
+    gap: 1rem;
+    margin: 120px 0 0 300px;
+  }
+  .approval-type button {
+    cursor: pointer;
+  }
+
+  /* Table */
+  .approval-table {
+    margin: 40px 20px 0 300px;
+  }
+  .approval-table-container thead tr {
+    background: #1366d9;
+  }
+  .approval-table-container thead th {
+    color: #fff;
+    font-size: 16px;
+  }
+  .approval-table-container tbody tr {
+    border-top: 20px solid #f0f1f3;
+  }
+  .approv-accept {
+    background: #1366d9;
+    color: #fff;
+    border: 1px solid #cccdce;
+    border-radius: 4px;
+    padding: 7px 15px;
+    cursor: pointer;
+  }
+  .approv-decline {
+    background: #f0f1f3;
+    color: #48505e;
+    border: 1px solid #cccdce;
+    border-radius: 4px;
+    padding: 7px 15px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
 }

@@ -3,10 +3,9 @@
   border-collapse: collapse;
 }
 
-/* .disc-table-container tbody tr {
+.disc-table-container tbody tr {
   border-top: 20px solid #fff;
-  border-bottom: 20px solid #fff;
-} */
+}
 
 /* Discount Card */
 
@@ -78,4 +77,46 @@
   border: 1px solid #707070;
   background: #989898;
   padding: 10px 20px;
+}
+
+/* Responsive */
+
+@media screen and (min-width: 1024px) {
+  /* Table */
+  .disc-table-container {
+    margin: 140px 20px 0 300px;
+  }
+  .disc-table-container thead tr {
+    background: #1366d9;
+  }
+  .disc-table-container thead th {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .disc-table-container tbody tr {
+    border-top: 20px solid #f0f1f3;
+  }
+  .disc-table-container tbody td {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  /* Card */
+  .disc-det {
+    width: 500px;
+  }
+  .disc-data-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  .disc-data-field input {
+    margin: 0;
+  }
+  .disc-close button:hover {
+    cursor: pointer;
+  }
 }

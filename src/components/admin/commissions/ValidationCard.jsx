@@ -390,8 +390,11 @@ const ValidationCard = ({ salesPersonID, validationCardDetails, onClose }) => {
             <div className="com-close">
                 <button onClick={onClose}>Close</button>
             </div>
+            <div className="com-cancel">
+                <button onClick={onClose}>Cancel</button>
+            </div>
             <div className="com-submit">
-                <button onClick={onClose}>Submit</button>
+                <button>Submit</button>
             </div>
             </div>
         </div>

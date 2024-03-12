@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import './/discount.css';
 import logo from '../../../assets/logo.svg';
 import menu from '../../../assets/menu.svg'
+import NavBar from '../../NavBar';
+import WebMenu from '../../menu/WebMenu'
 import MobileModal from "../../menu/MobileModal";
 import discountData from '../../../data/discountData'
 import DiscountCard from "./DiscountCard";
@@ -70,6 +72,8 @@ const Discount = () => {
                     </tbody>
                 </table>
             </div>
+            <NavBar />
+            <WebMenu />
             <MobileModal isOpen={isOpen} onClose={toggleModal}/>
             {selectedProjectID && <DiscountCard projectID={selectedProjectID} onClose={() => setSelectedProjectID(null)} />}
     </div>

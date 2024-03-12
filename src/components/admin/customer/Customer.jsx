@@ -4,6 +4,8 @@ import logo from '../../../assets/logo.svg';
 import menu from '../../../assets/menu.svg'
 import MobileModal from "../../menu/MobileModal";
 import CustomerTable from "./CustomerTable";
+import NavBar from '../../NavBar';
+import WebMenu from '../../menu/WebMenu'
 
 
 const Customer = () => {
@@ -55,6 +57,8 @@ const Customer = () => {
                 </div>
             </div>
         </div>
+        <NavBar />
+        <WebMenu />
         <CustomerTable selectedButton={selectedButton} />
         <MobileModal isOpen={isOpen} onClose={toggleModal}/>
     </div>

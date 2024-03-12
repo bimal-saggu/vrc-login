@@ -32,3 +32,23 @@
   width: 100%;
   border-collapse: collapse;
 }
+
+/* Responsive */
+@media screen and (min-width: 1024px) {
+  .export-sec {
+    margin: 120px 20px 0 0;
+  }
+  .lead-table-container {
+    margin: 40px 20px 20px 300px;
+  }
+  .lead-table-container thead tr {
+    background: #1366d9;
+  }
+  .lead-table-container thead th {
+    color: #fff;
+    font-size: 16px;
+  }
+  .lead-table-container tbody tr {
+    border-top: 20px solid #f0f1f3;
+  }
+}

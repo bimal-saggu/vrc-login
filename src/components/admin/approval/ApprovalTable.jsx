@@ -36,6 +36,16 @@ const ApprovalTable = ({ selectedStatus }) => {
         setSelectedApproval(false);
     };
 
+    const renderDateHeader = () => {
+        if (selectedStatus === 'Approved') {
+            return <th>Date of Approval</th>;
+        } else if (selectedStatus === 'Rejected') {
+            return <th>Date of Rejected</th>;
+        } else {
+            return <th>Date of Signup</th>;
+        }
+    };
+
   return (
     <div className="approval-table">
                 <div className="approval-table-sec">
@@ -52,28 +62,35 @@ const ApprovalTable = ({ selectedStatus }) => {
                                     <th>Name</th>
                                     {viewportWidth >= 1024 && <th>Email</th>}
                                     {viewportWidth >= 1024 && <th>Roles</th>}
-                                    <th>Date of Signup</th>
-                                    {viewportWidth >= 1024 && <th>Actions</th>}
+                                    {renderDateHeader()}
+                                    {selectedStatus === 'Pending' && viewportWidth >= 1024 && <th>Actions</th>}
                                 </tr>
                             </thead>
                             <tbody>
                                 {approvals.map((approv) => (
-                                    <tr key={approv.sno} onClick={() => handleOpenPendingApproval(approv)}>
-                                        <td>{approv.sno}</td>
-                                        <td>{approv.name}</td>
-                                        {viewportWidth >= 1024 && <td>{approv.emailId}</td>}
-                                        {viewportWidth >= 1024 && <select>
-                                                <option value="">Roles</option>
-                                                <option value="Super Admin">Super Admin</option>
-                                                <option value="Manager">Manager</option>
-                                                <option value="Channel Person">Channel Person</option>
-                                                <option value="Sales Person">Sales Person</option>
-                                            </select>}
-                                        <td>{approv.dateOfSignUp}</td>
-                                        {viewportWidth >= 1024 && <td>
-                                            <button>Decline</button>
-                                            <button>Accept</button>
-                                        </td>}
+                                    <tr key={approv.sno}>
+                                        <td onClick={() => handleOpenPendingApproval(approv)}>{approv.sno}</td>
+                                        <td onClick={() => handleOpenPendingApproval(approv)}>{approv.name}</td>
+                                        {viewportWidth >= 1024 && <td onClick={() => handleOpenPendingApproval(approv)}>{approv.emailId}</td>}
+                                        {selectedStatus === 'Pending' && viewportWidth >= 1024 ? (
+                                            <td>
+                                                <select>
+                                                    <option value="">Roles</option>
+                                                    <option value="Super Admin">Super Admin</option>
+                                                    <option value="Manager">Manager</option>
+                                                    <option value="Channel Person">Channel Person</option>
+                                                    <option value="Sales Person">Sales Person</option>
+                                                </select>
+                                            </td>
+                                        ) : viewportWidth >= 1024 && <td onClick={() => handleOpenPendingApproval(approv)}>{approv.role}</td>}
+                                        
+                                        <td onClick={() => handleOpenPendingApproval(approv)}>{approv.dateOfSignUp}</td>
+                                        {selectedStatus === 'Pending' && viewportWidth >= 1024 && (
+                                            <td>
+                                                <button className="approv-decline">Decline</button>
+                                                <button className="approv-accept">Accept</button>
+                                            </td>
+                                        )}
                                     </tr>
                                 ))}
                             </tbody>

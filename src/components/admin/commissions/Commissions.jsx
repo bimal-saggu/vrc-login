@@ -3,6 +3,8 @@ import './/commissions.css'
 import logo from '../../../assets/logo.svg';
 import menu from '../../../assets/menu.svg'
 import MobileModal from "../../menu/MobileModal";
+import NavBar from '../../NavBar';
+import WebMenu from '../../menu/WebMenu';
 import ValidationTable from "./ValidationTable";
 import SoldTable from "./SoldTable";
 import CpCommissionTable from "./CpCommissionTable";
@@ -46,6 +48,8 @@ const Commissions = () => {
         {selectedButton === 'Validation' && <ValidationTable />}
         {selectedButton === 'Sold' && <SoldTable />}
         {selectedButton === 'Cp Commission' && <CpCommissionTable />}
+        <NavBar />
+        <WebMenu />
         <MobileModal isOpen={isOpen} onClose={toggleModal}/>
     </div>
   );

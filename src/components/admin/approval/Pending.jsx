@@ -3,6 +3,8 @@ import logo from '../../../assets/logo.svg'
 import menu from '../../../assets/menu.svg'
 import ApprovalTable from "./ApprovalTable";
 import MobileModal from "../../menu/MobileModal";
+import NavBar from '../../NavBar';
+import WebMenu from '../../menu/WebMenu';
 
 const Pending = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -36,6 +38,8 @@ const Pending = () => {
                     <button style={{ backgroundColor: selectedStatus === 'Rejected' ?  '#1366d9': '' }} onClick={() => setSelectedStatus('Rejected')}>Rejected</button>
                 </div>
             </div>
+            <NavBar />
+            <WebMenu />
             <MobileModal isOpen={isOpen} onClose={toggleModal}/>
             <ApprovalTable selectedStatus={selectedStatus} />
     </div>

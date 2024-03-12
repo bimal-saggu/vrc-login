@@ -13,7 +13,7 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
-  width: 100px;
+  width: 92px;
 }
 
 /* Commission Table */
@@ -25,6 +25,14 @@
 .com-table-container table {
   width: 100%;
   border-collapse: collapse;
+}
+
+.com-table-container tbody tr {
+  border-top: 20px solid #fff;
+}
+
+.com-table-container .drop-table-container tr {
+  border: none;
 }
 
 .holder-id img {
@@ -44,6 +52,10 @@
   border-collapse: collapse;
 }
 
+.salary-table-container tbody tr {
+  border-top: 20px solid #fff;
+}
+
 /* Miscellaneous Table */
 
 .miscel-table-container {
@@ -53,4 +65,92 @@
 .miscel-table-container table {
   width: 100%;
   border-collapse: collapse;
+}
+
+.miscel-table-container tbody tr {
+  border-top: 20px solid #fff;
+}
+
+/* Responsive */
+
+@media screen and (min-width: 1024px) {
+  /* Expenses */
+  .expense-type {
+    margin: 120px 0 0 300px;
+    justify-content: justify-content;
+  }
+  .expense-btn-layout {
+    display: flex;
+    gap: 20px;
+  }
+  .expense-type-btn button {
+    width: 120px;
+  }
+  .expense-type-btn button:hover {
+    cursor: pointer;
+  }
+  .ex-export-sec {
+    margin-right: 20px;
+  }
+
+  /* Commission Table */
+  .com-table-container {
+    margin: 40px 20px 0 300px;
+  }
+  .com-table-container thead tr {
+    background: #1366d9;
+  }
+  .com-table-container thead th {
+    color: #fff;
+    font-size: 16px;
+  }
+  .com-table-container tbody td {
+    font-size: 16px;
+  }
+  .com-table-container tbody tr {
+    border-top: 20px solid #f0f1f3;
+  }
+  /* Commission drop down */
+  .com-table-container .drop-table-container thead tr {
+    background: none;
+  }
+  .com-table-container .drop-table-container thead th {
+    color: #313131;
+  }
+
+  /* Salary Table */
+  .salary-table-container {
+    margin: 40px 20px 0 300px;
+  }
+  .salary-table-container thead tr {
+    background: #1366d9;
+  }
+  .salary-table-container thead th {
+    color: #fff;
+    font-size: 16px;
+  }
+  .salary-table-container tbody td {
+    font-size: 16px;
+  }
+  .salary-table-container tbody tr {
+    border-top: 20px solid #f0f1f3;
+  }
+
+  /* Miscellaneous Table */
+  .miscel-table-container {
+    margin: 40px 20px 0 300px;
+  }
+  .miscel-table-container thead tr {
+    background: #1366d9;
+  }
+  .miscel-table-container thead th {
+    color: #fff;
+    font-size: 16px;
+  }
+  .miscel-table-container tbody td {
+    font-size: 16px;
+  }
+  .miscel-table-container tbody tr {
+    border-top: 20px solid #f0f1f3;
+  }
 }

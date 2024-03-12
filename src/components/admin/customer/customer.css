@@ -14,7 +14,7 @@
   font-weight: 500;
   line-height: 18.739px;
   padding: 15px 0;
-  width: 100px;
+  width: 90px;
 }
 
 .status-primary {
@@ -114,4 +114,62 @@
   border: 1px solid #707070;
   background: #989898;
   padding: 10px 20px;
+}
+
+/* Responsive */
+
+@media screen and (min-width: 1024px) {
+  /* Customer */
+  .status-buttons {
+    display: flex;
+    flex-direction: row;
+    margin: 120px 0 0 300px;
+  }
+  .status-buttons button {
+    width: 120px;
+  }
+  .status-buttons button:hover {
+    cursor: pointer;
+  }
+  .status-primary,
+  .status-secondary {
+    gap: 1.5rem;
+  }
+  .hide {
+    display: none;
+  }
+  /* Customer Table */
+  .cus-table-container {
+    margin: 40px 20px 0 300px;
+  }
+  .cus-table-container thead tr {
+    background: #1366d9;
+  }
+  .cus-table-container thead th {
+    color: #fff;
+    font-size: 16px;
+  }
+  .cus-table-container tbody tr {
+    border-top: 20px solid #f0f1f3;
+  }
+  .cus-table-container tbody td {
+    font-size: 16px;
+  }
+  /* Customer card */
+  .cus-det {
+    width: 500px;
+  }
+  .cus-data-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  .cus-data-field input {
+    margin: 0;
+  }
+  .cus-close button:hover {
+    cursor: pointer;
+  }
 }
