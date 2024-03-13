@@ -40,6 +40,15 @@ const Discount = () => {
 
   return (
     <div>
+        <style>
+            {`
+                @media screen and (min-width: 1024px) {
+                    body {
+                      background: #f0f1f3;
+                    }
+                }
+            `}
+        </style>
         <div className="mob-nav" >
             <a href=""><img src={logo} alt="" /></a>
             <img src={menu} alt="" onClick={toggleModal}/>

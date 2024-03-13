@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import partSoldDataDummy from "../../../data/partSoldData";
+import deleteIcon from "../../../assets/delete.svg";
+import exportIcon from "../../../assets/export.svg";
 
 const DeletedPartpaymentProjectsTable = () => {
     const [deltedPartpaymentProjects, setDeletedpartpaymentProjects] = useState([]);
@@ -22,9 +24,9 @@ const DeletedPartpaymentProjectsTable = () => {
       }, []);
 
   return (
-    <div className="receipt-table">
+    <div>
       <div className="receipt-table-sec">
-        <div className="receipts-table-container">
+        <div className="receipts-table-container part-pay-del">
           <table>
             <thead>
               <tr>
@@ -32,7 +34,6 @@ const DeletedPartpaymentProjectsTable = () => {
                 <th>Project Name</th>
                 {<th>Client Name</th>}
                 {viewportWidth >= 1024 && <th>Status</th>}
-                {viewportWidth >= 1024 && <th>Actions</th>}
               </tr>
             </thead>
             <tbody>
@@ -45,14 +46,6 @@ const DeletedPartpaymentProjectsTable = () => {
                     <td>{data.projectName}</td>
                     <td>{data.clientName}</td>
                     {viewportWidth >= 1024 && <td>{data.status}</td>}
-                    {viewportWidth >= 1024 && (
-                      <td>
-                        <div className="receipt-actions">
-                          <img src={deleteIcon} alt="" />
-                          <img src={exportIcon} alt="" />
-                        </div>
-                      </td>
-                    )}
                   </tr>
                   {/* {renderDropdown(data.projectID)} */}
                 </React.Fragment>

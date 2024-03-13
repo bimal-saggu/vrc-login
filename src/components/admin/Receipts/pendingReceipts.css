@@ -35,6 +35,10 @@
   border-collapse: collapse;
 }
 
+.receipts-table-container tbody tr {
+  border-top: 20px solid #fff;
+}
+
 .table-headings p {
   color: #fff;
   font-size: 14px;
@@ -145,6 +149,11 @@
   border-radius: 4px;
   border: 1px solid #707070;
   background-color: #1366d9;
+}
+
+.cancel-btn button,
+.validate-btn button {
+  display: none;
 }
 
 .deleted-receipts button {
@@ -289,10 +298,144 @@
 /* Responsive */
 
 @media screen and (min-width: 1024px) {
+  /* Pending Receipts */
+  .receipt-type {
+    justify-content: start;
+    gap: 1rem;
+    margin: 120px 0 0 300px;
+  }
+  .receipt-type button {
+    cursor: pointer;
+  }
+  /* Pending Receipts Table */
+  .deleted-receipts {
+    display: none;
+  }
+  .deleted-receipts button {
+    cursor: pointer;
+  }
+  .receipt-table {
+    margin: 40px 20px 20px 300px;
+  }
+  .receipt-table-head h3 {
+    display: none;
+  }
+  .receipts-table-container {
+    margin: 0 0 0 0;
+  }
+  .receipts-table-container thead tr {
+    background: #1366d9;
+  }
+  .receipts-table-container thead th {
+    color: #fff;
+    font-size: 16px;
+  }
+  .receipts-table-container tbody tr {
+    border-top: 20px solid #f0f1f3;
+  }
+  .receipts-table-container tbody td {
+    font-size: 16px;
+  }
+  .res-del-rec h2 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #f55959;
+    margin: 60px 20px 0 300px;
+  }
+  /* Part Payment Table */
+  .receipt-table-head {
+    display: flex;
+    justify-content: end;
+  }
+  .receipt-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .receipt-actions img {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+  }
+  .res-del-rec select {
+    margin: 40px 0 0 300px;
+  }
+  .part-pay-del {
+    margin: 40px 20px 20px 300px;
+  }
+  .select-deleted-type {
+    display: none;
+  }
+  .part-select {
+    font-size: 24px;
+    font-weight: 500;
+    background: #f0f1f3;
+    color: #f55959;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .part-select option {
+    font-size: 24px;
+    font-weight: 500;
+    color: #f55959;
+    /* padding: 10px 5px; */
+  }
+  /* Dropdown */
+  .drop-sec {
+    height: 200px;
+  }
+  .drop-head h4 {
+    font-size: 18px;
+    font-weight: 700;
+    padding-top: 10px;
+  }
+  .drop-table-container thead th,
+  .drop-table-container tbody td {
+    padding: 10px 0;
+  }
   /* Card */
+  .rec-det {
+    width: 500px;
+    z-index: 1;
+  }
   .rec-data-field {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+  }
+  .rec-actions button {
+    cursor: pointer;
+  }
+  .cancel-btn button {
+    color: #5f5d5d;
+    border-radius: 4px;
+    border: 1px solid #707070;
+    background: rgba(152, 152, 152, 0);
+  }
+  .validate-btn button {
+    color: #fff;
+    border-radius: 4px;
+    border: 1px solid #707070;
+    background-color: #1366d9;
+  }
+  .cancel-btn button,
+  .validate-btn button {
+    display: flex;
+  }
+  .pen-save button,
+  .pen-export button {
+    display: none;
+  }
+  /* Part Payment Card - Deleted part-payment */
+  .rec-close button {
+    cursor: pointer;
+  }
+  /* Sold Deleted Projects Table */
+  .sold-receipts-table-container {
+    margin: 40px 20px 20px 300px;
   }
 }

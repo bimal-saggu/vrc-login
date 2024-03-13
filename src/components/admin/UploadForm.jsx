@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Upload = ({ selectedType }) => {
+const UploadForm = ({ selectedType, onClose }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const handleClose = () => {
@@ -32,14 +32,13 @@ const Upload = ({ selectedType }) => {
               <input
                 id="type"
                 type="text"
-                placeholder="Enter project type"
                 value={selectedType}
                 readOnly
               />
             </div>
             <div className="add_Btns">
               <div className="can-btn">
-                <button onClick={handleClose}>Cancel</button>
+                <button onClick={onClose}>Cancel</button>
               </div>
               <div className="add-btn">
                 <button>Add Project</button>
@@ -52,4 +51,4 @@ const Upload = ({ selectedType }) => {
   );
 };
 
-export default Upload;
+export default UploadForm;

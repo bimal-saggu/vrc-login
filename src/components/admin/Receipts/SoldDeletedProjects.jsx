@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import partPayRecData from "../../../data/partPayRecData";
 import partSoldPayments from "../../../data/partSoldPayments";
 import close from "../../../assets/menuClose.svg";
+import deleteIcon from "../../../assets/delete.svg";
+import exportIcon from "../../../assets/export.svg";
 import partSoldDataDummy from "../../../data/partSoldData";
 import SoldDeletedProjectsCard from './SoldDeletedProjectsCard'
 
@@ -100,9 +102,9 @@ const SoldDeletedProjects = () => {
       };
 
   return (
-    <div className="receipt-table">
+    <div>
       <div className="receipt-table-sec">
-        <div className="receipts-table-container">
+        <div className="receipts-table-container sold-receipts-table-container">
           <table>
             <thead>
               <tr>
@@ -110,7 +112,6 @@ const SoldDeletedProjects = () => {
                 <th>Project Name</th>
                 {<th>Client Name</th>}
                 {viewportWidth >= 1024 && <th>Status</th>}
-                {viewportWidth >= 1024 && <th>Actions</th>}
               </tr>
             </thead>
             <tbody>
@@ -124,14 +125,6 @@ const SoldDeletedProjects = () => {
                     <td>{data.projectName}</td>
                     <td>{data.clientName}</td>
                     {viewportWidth >= 1024 && <td>{data.status}</td>}
-                    {viewportWidth >= 1024 && (
-                      <td>
-                        <div className="receipt-actions">
-                          <img src={deleteIcon} alt="" />
-                          <img src={exportIcon} alt="" />
-                        </div>
-                      </td>
-                    )}
                   </tr>
                   {renderDropdown(data.projectID)}
                 </React.Fragment>

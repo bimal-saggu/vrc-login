@@ -18,6 +18,11 @@ const Pending = () => {
     <div>
         <style>
             {`
+                @media screen and (min-width: 1024px) {
+                    body {
+                      background: #f0f1f3;
+                    }
+                }
                 .approval-type-btn button {
                     background-color: ${selectedStatus ? '#9FC2F3' : '#1366d9'};
                 }

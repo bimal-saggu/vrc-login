@@ -3,6 +3,8 @@ import '../Receipts/pendingReceipts.css';
 import logo from '../../../assets/logo.svg';
 import menu from '../../../assets/menu.svg'
 import MobileModal from "../../menu/MobileModal";
+import NavBar from '../../NavBar';
+import WebMenu from '../../menu/WebMenu';
 import PendingReceiptsTable from "./PendingReceiptsTable";
 import PartSoldTable from "./PartSoldTable";
 import DeletedReceiptsTable from "./DeletedReceiptsTable";
@@ -30,6 +32,11 @@ const PendingReceipts = () => {
     <div>
         <style>
             {`
+                @media screen and (min-width: 1024px) {
+                    body {
+                      background: #f0f1f3;
+                    }
+                }
                 .receipt-type-btn button {
                     background-color: ${status ? '#9FC2F3' : '#1366d9'};
                 }
@@ -54,6 +61,8 @@ const PendingReceipts = () => {
         {status === 'Part-Payment' && <PartSoldTable />}
         {status === 'Sold' && <SoldTable />}
         {status === "Deleted" && <DeletedReceiptsTable />}
+        <NavBar />
+        <WebMenu />
         <MobileModal isOpen={isOpen} onClose={toggleModal}/>
     </div>
   );

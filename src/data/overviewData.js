@@ -1,5 +1,5 @@
-const overViewData ={
-    income: 832, expenses: 18300, balance: 838
-}
+const overViewData =[
+    {income: 20000, expenses: 18300}
+]
 
 export default overViewData;

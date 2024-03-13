@@ -112,7 +112,7 @@ const CommissionTable = () => {
                                 <React.Fragment key={index}><tr key={index} onClick={() => handleRowClick(data.commissionHolderID)}>
                                     <td>{data.sno}</td>
                                     <td>{data.commissionHolderName}</td>
-                                    <td className="holder-id">{data.commissionHolderID}<img src={exportIcon} alt="Export" /></td>
+                                    <td className="row-down">{data.commissionHolderID}<img src={exportIcon} alt="Export" /></td>
                                 </tr>
                                 {renderDropdown(data.commissionHolderID)}
                                 </React.Fragment>

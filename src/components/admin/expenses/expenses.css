@@ -1,4 +1,8 @@
-.expense-type {
+/* .expense-type {
+  display: flex;
+  justify-content: space-between;
+} */
+.expense-btn-layout {
   display: flex;
   justify-content: space-between;
   margin: 0 20px;
@@ -35,9 +39,9 @@
   border: none;
 }
 
-.holder-id img {
-  width: 10px;
-  height: 10px;
+.row-down img {
+  width: 15px;
+  height: 15px;
   margin-left: 20px;
 }
 
@@ -77,10 +81,12 @@
   /* Expenses */
   .expense-type {
     margin: 120px 0 0 300px;
-    justify-content: justify-content;
+    display: flex;
+    justify-content: space-between;
+    /* justify-content: justify-content; */
   }
   .expense-btn-layout {
-    display: flex;
+    justify-content: start;
     gap: 20px;
   }
   .expense-type-btn button {
@@ -109,6 +115,11 @@
   }
   .com-table-container tbody tr {
     border-top: 20px solid #f0f1f3;
+  }
+  .row-down img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
   }
   /* Commission drop down */
   .com-table-container .drop-table-container thead tr {

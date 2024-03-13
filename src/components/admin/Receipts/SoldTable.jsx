@@ -106,6 +106,7 @@ const SoldTable = () => {
   };
 
   return (
+    <>
     <div className="receipt-table">
       <div className="receipt-table-sec">
         <div className="receipt-table-head">
@@ -164,6 +165,11 @@ const SoldTable = () => {
         />
       )}
     </div>
+    {viewportWidth >= 1024 && <div className="res-del-rec">
+      <h2>Deleted Projects</h2>
+      <SoldDeletedProjects />
+    </div>}
+    </>
   );
 };
 

@@ -607,7 +607,7 @@ const SoldCard = ({ receiptID, partPaymentsData, onClose }) => {
           <img src={close} alt="Close card" onClick={onClose} />
         </div>
         <div className="rec-head">
-          <h3>Receipt</h3>
+          <h3>Sold Receipt</h3>
         </div>
         <div className="rec-data">{renderFields()}</div>
         <div className="rec-actions">

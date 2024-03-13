@@ -3,7 +3,7 @@ import './/spHistory.css'
 import logo from '../../../assets/logo.svg';
 import menu from '../../../assets/menu.svg';
 import close from '../../../assets/menuClose.svg';
-import leadExport from '../../../assets/export.svg'
+import exportIcon from '../../../assets/export.svg';
 import MobileModal from "../../menu/MobileModal";
 import spHistoryData from '../../../data/spHistoryData'
 import spClientData from "../../../data/spClientData";
@@ -105,13 +105,22 @@ const SpHistory = () => {
 
   return (
     <div>
+        <style>
+            {`
+                @media screen and (min-width: 1024px) {
+                    body {
+                      background: #f0f1f3;
+                    }
+                }
+            `}
+        </style>
         <div className="mob-nav" >
             <a href=""><img src={logo} alt="" /></a>
             <img src={menu} alt="" onClick={toggleModal}/>
         </div >
         <div className="cp-export-sec">
         <div className="cp-export">
-          <img src={leadExport} alt="" />
+          <img src={exportIcon} alt="" />
           <p>Export</p>
         </div>
       </div>
@@ -129,7 +138,7 @@ const SpHistory = () => {
                         <React.Fragment key={his.salesPersonID}><tr key={his.salesPersonID} onClick={() => handleRowClick(his.salesPersonID)}>
                             <td>{his.sno}</td>
                             <td>{his.salesPersonID}</td>
-                            <td>{his.salesPersonName}</td>
+                            <td className="row-down">{his.salesPersonName}<img src={exportIcon} alt="Export" /></td>
                         </tr>
                         {selectedRow === his.salesPersonID && renderDropdown()}
                         </React.Fragment>

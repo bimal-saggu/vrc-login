@@ -1,5 +1,35 @@
+.adm-act {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.adm-act select {
+  background: #1366d9;
+  color: #fff;
+  border-radius: 4px;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
+}
+
+.adm-act button {
+  background: #1366d9;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 5px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
+}
+
 .add_Proj {
-  width: 500px;
+  width: 300px;
   background: white;
   border-radius: 8px;
   position: fixed; /* Keep the modal fixed */
@@ -145,28 +175,116 @@
   border-radius: 4px;
 }
 
+.xyz {
+  display: none;
+}
+
 /* DASHBOARD */
 /* .dash {
   background: #f0f1f3;
 } */
 
 .type {
+  display: none;
+}
+
+/* Status Overview */
+
+.stat-det {
+  width: 310px;
+  background: white;
+  border-radius: 8px;
+  position: fixed; /* Keep the modal fixed */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%);
+}
+
+.stat-sec {
+  padding: 30px;
+}
+
+.stat-head h3 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  text-align: center;
+}
+
+.stat-data {
   display: flex;
-  gap: 10px;
-  margin-left: 300px;
-  margin-top: 320px;
+  flex-direction: column;
 }
 
-.type-btn button {
-  width: 110px;
+.stat-data-field {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat-key {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.avail {
+  color: #10a760;
+}
+
+.token {
+  color: #e19133;
+}
+
+.adv {
+  color: #1366d9;
+}
+
+.part {
+  color: #222222;
+}
+
+.block {
+  color: #9c9c9c;
+}
+
+.sold {
+  color: #ef1f1f;
+}
+
+.stat-value {
+  color: #48505e;
   font-size: 14px;
-  padding: 10px;
-  background-color: #1366d9;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
+  font-weight: 500;
+  line-height: 24px;
 }
 
-.type-btn :hover {
-  cursor: pointer;
+@media screen and (min-width: 1024px) {
+  .adm-act {
+    display: none;
+  }
+  .type {
+    display: flex;
+    gap: 10px;
+    margin-left: 300px;
+    margin-top: 300px;
+  }
+
+  .type-btn button {
+    width: 110px;
+    font-size: 14px;
+    padding: 10px;
+    background-color: #1366d9;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+  }
+
+  .type-btn :hover {
+    cursor: pointer;
+  }
+
+  /* Add Project  */
+  .add_Proj {
+    width: 500px;
+  }
 }

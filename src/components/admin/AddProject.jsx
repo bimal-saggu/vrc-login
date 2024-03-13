@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../admin/style.css'
 
-const AddProject = ({ selectedType }) => {
+const AddProject = ({ selectedType, onClose }) => {
     const [isOpen, setIsOpen] = useState(true);
 
     const handleClose = () => { 
@@ -134,7 +134,7 @@ const AddProject = ({ selectedType }) => {
             ))}
                     <div className='add_Btns'>
                         <div className='disc-btn'>
-                            <button onClick={handleClose}>Discard</button>
+                            <button onClick={onClose}>Discard</button>
                         </div>
                         <div className='add-btn'>
                             <button>Add Project</button>

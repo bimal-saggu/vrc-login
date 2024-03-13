@@ -2,10 +2,12 @@
   width: auto;
   background: white;
   border-radius: 8px;
-  margin-left: 300px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px 20px 20px 300px;
   /* transform: translateX(5%); */
+}
+
+.scale-sec {
+  padding: 20px 30px;
 }
 
 .scale_Data {
@@ -14,11 +16,11 @@
 }
 
 .item-heading {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 36px;
   text-align: center;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .one {
@@ -44,18 +46,27 @@
 .six {
   color: #ef1f1f;
 }
-.scale_Items {
-  padding: 0 15px;
-}
 
 .item-count {
-  margin: 15px;
+  /* margin-top: 15px; */
 }
 
 .scale_Items span {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 25px;
   color: #48505e;
   padding: 5px;
+}
+
+@media screen and (min-width: 1200px) {
+  .scale-sec {
+    padding: 20px 40px;
+  }
+  .item-heading {
+    font-size: 20px;
+  }
+  .scale_Items span {
+    font-size: 16px;
+  }
 }

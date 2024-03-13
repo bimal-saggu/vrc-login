@@ -17,6 +17,7 @@ const PartSoldTable = () => {
   const [selectedRow, setSelectedRow] = useState(null);
   const [selectedReceiptId, setSelectedReceiptId] = useState(null);
   const [selectedOption, setSelectedOption] = useState("");
+  const [selectedPartOption, setSelectedPartOption] = useState("Deleted Part");
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -57,6 +58,11 @@ const PartSoldTable = () => {
 
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value); // Update selected option
+    // console.log(selectedOption);
+  };
+
+  const handleSelectPartChange = (event) => {
+    setSelectedPartOption(event.target.value); // Update selected option
     // console.log(selectedOption);
   };
 
@@ -116,6 +122,7 @@ const PartSoldTable = () => {
   };
 
   return (
+    <>
     <div className="receipt-table">
       <div className="receipt-table-sec">
         <div className="receipt-table-head">
@@ -123,7 +130,7 @@ const PartSoldTable = () => {
           <div className="deleted-type">
           <select className="select-deleted-type" value={selectedOption} onChange={handleSelectChange}>
                 <option value="">Deleted Part Payment</option>
-                <option value="Deleted Part Payment">Deleted Part Payment</option>
+                <option value="Deleted Part Payment">Deleted Part Payments</option>
                 <option value="Deleted Projects">Deleted Projects</option>
             </select>
           </div>
@@ -181,6 +188,19 @@ const PartSoldTable = () => {
         />
       )}
     </div>
+    {viewportWidth >= 1024 && <div className="res-del-rec">
+    <select className="part-select" value={selectedPartOption} onChange={handleSelectPartChange}>
+                <option value="Deleted Part">Deleted Part Payments</option>
+                <option value="Deleted Proj">Deleted Projects</option>
+    </select>
+    {selectedPartOption === "Deleted Part" && (
+            <DeletedPartTable />
+          )}
+          {selectedPartOption === "Deleted Proj" && (
+            <DeletedPartpaymentProjectsTable />
+          )}
+    </div>}
+    </>
   );
 };
 

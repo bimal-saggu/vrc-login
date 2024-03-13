@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import './table.css'
 import dummyData from '../data/dummyData'
 import AddProject from './admin/AddProject';
-import Upload from './admin/Upload'
 import ProjectDetails from './sales-channel/ProjectDetails';
+import UploadForm from './admin/UploadForm';
 
 const Table = ({selectedButton}) => {
 
@@ -118,8 +118,8 @@ const handleCloseProjectDetails = () => {
         <div className="actions">
           <button onClick={handleAddProject}>Add Project</button>
           <div className='actions file-actions'>
-            <button onClick={handleUpload}>Upload</button>
-            <button>Download</button>
+            <div><button onClick={handleUpload}>Upload</button></div>
+            <div><button>Download</button></div>
           </div>
         </div>
       </div>
@@ -165,7 +165,7 @@ const handleCloseProjectDetails = () => {
       </div>
       </div>
       {showAddProjectForm && <AddProject selectedType={selectedButton} />}
-      {showUploadForm && <Upload selectedType={selectedButton} />}
+      {showUploadForm && <UploadForm selectedType={selectedButton} />}
       {showProjectDetails && <ProjectDetails project={selectedProject} getStatusColor={getStatusColor} onClose={handleCloseProjectDetails}/>}
     </div>
   )
