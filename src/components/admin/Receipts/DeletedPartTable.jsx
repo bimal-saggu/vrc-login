@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import partSoldDataDummy from "../../../data/partSoldData";
+import './pendingReceipts.css'
 import partSoldPayments from "../../../data/partSoldPayments";
 import partPayRecData from "../../../data/partPayRecData";
 import close from "../../../assets/menuClose.svg";
-import deleteIcon from "../../../assets/delete.svg";
-import exportIcon from "../../../assets/export.svg";
 import abcd from "../../../data/abcd";
 import DeletedPartCard from "./DeletedPartCard";
 

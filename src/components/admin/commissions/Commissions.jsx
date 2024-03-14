@@ -41,13 +41,13 @@ const Commissions = () => {
         </div >
         <div className="com-type">
             <div className="com-type-btn">
-                <button style={{ backgroundColor: selectedButton === 'Validation' ? '#1366d9' : '' }} onClick={() => handleButtonClick('Validation')}>Validation</button>
+                <button className="valid" style={{ backgroundColor: selectedButton === 'Validation' ? '#1366d9' : '' }} onClick={() => handleButtonClick('Validation')}>Validation</button>
             </div>
             <div className="com-type-btn">
-                <button style={{ backgroundColor: selectedButton === 'Sold' ? '#1366d9' : '' }} onClick={() => handleButtonClick('Sold')}>Sold</button>
+                <button className="sold" style={{ backgroundColor: selectedButton === 'Sold' ? '#1366d9' : '' }} onClick={() => handleButtonClick('Sold')}>Sold</button>
             </div>
             <div className="com-type-btn">
-                <button style={{ backgroundColor: selectedButton === 'Cp Commission' ? '#1366d9' : '' }} onClick={() => handleButtonClick('Cp Commission')}>Cp Commission</button>
+                <button className="cp" style={{ backgroundColor: selectedButton === 'Cp Commission' ? '#1366d9' : '' }} onClick={() => handleButtonClick('Cp Commission')}>Cp Commission</button>
             </div>
         </div>
         {selectedButton === 'Validation' && <ValidationTable />}

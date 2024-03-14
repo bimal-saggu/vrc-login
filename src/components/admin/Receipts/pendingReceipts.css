@@ -218,6 +218,10 @@
   height: 10px;
 }
 
+.dropdown {
+  border: none !important;
+}
+
 .drop-sec,
 .dropdown td,
 .drop-table-container thead tr {
@@ -392,6 +396,9 @@
     font-size: 18px;
     font-weight: 700;
     padding-top: 10px;
+  }
+  .drop-head img {
+    cursor: pointer;
   }
   .drop-table-container thead th,
   .drop-table-container tbody td {

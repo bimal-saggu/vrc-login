@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import "../Receipts/pendingReceipts.css";
+import "./pendingReceipts.css";
 import soldDataDummy from "../../../data/soldDataDummy";
 import partSoldPayments from "../../../data/partSoldPayments";
 import partPayRecData from "../../../data/partPayRecData";
 import close from "../../../assets/menuClose.svg";
 import deleteIcon from "../../../assets/delete.svg";
 import exportIcon from "../../../assets/export.svg";
-import PartPayReceiptCard from "./PartPayReceiptCard";
 import SoldCard from "./SoldCard";
 import SoldDeletedProjects from "./SoldDeletedProjects";
 
