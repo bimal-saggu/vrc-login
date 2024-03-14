@@ -7,10 +7,14 @@ import MobileModal from "../../menu/MobileModal";
 import NavBar from '../../NavBar';
 import WebMenu from '../../menu/WebMenu';
 import leadGenData from '../../../data/leaGenData'
+import LeadGenCard from "./LeadGenCard";
 
 const LeadGeneration = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [leadGeneration, setLeadGeneration] = useState([]);
+  const [showLeadGenCard, setShowLeadGenCard] = useState(false);
+  const [leadGenCardData, setLeadGenCardData] = useState(null);
+  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     setLeadGeneration(leadGenData);
@@ -18,6 +22,27 @@ const LeadGeneration = () => {
 
   const toggleModal = () => {
     setIsOpen(!isOpen); // Toggle modal visibility
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setViewportWidth(window.innerWidth);
+    };
+  
+    window.addEventListener('resize', handleResize); // Listen for viewport width changes
+  
+    return () => {
+      window.removeEventListener('resize', handleResize); // Cleanup
+    };
+  }, []);
+
+  const handleOpenLeadGenCard = (leadData) => {
+    setLeadGenCardData(leadData)
+    setShowLeadGenCard(true);
+  };
+
+  const handleCloseLeadGenCard = () => {
+    setShowLeadGenCard(false);
   };
 
 
@@ -47,16 +72,16 @@ const LeadGeneration = () => {
           <thead>
             <tr>
               <th>Name</th>
-              <th>Email ID</th>
+              {viewportWidth >= 1024 &&<th>Email ID</th>}
               <th>Phone Number</th>
               <th>Location</th>
             </tr>
           </thead>
           <tbody>
             {leadGeneration.map((data, index) => (
-              <tr key={index}>
+              <tr key={index} onClick={() => handleOpenLeadGenCard(data)}>
                 <td>{data.name}</td>
-                <td>{data.emailId}</td>
+                {viewportWidth >= 1024 && <td>{data.emailId}</td>}
                 <td>{data.phoneNumber}</td>
                 <td>{data.location}</td>
               </tr>
@@ -67,6 +92,7 @@ const LeadGeneration = () => {
       <NavBar />
       <WebMenu />
       <MobileModal isOpen={isOpen} onClose={toggleModal}/>
+      {showLeadGenCard && <LeadGenCard leadGenCardData={leadGenCardData} onClose={handleCloseLeadGenCard} />}
     </div>
   );
 };

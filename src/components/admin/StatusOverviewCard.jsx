@@ -1,4 +1,5 @@
 import React from "react";
+import './style.css'
 import close from '../../assets/menuClose.svg'
 
 const StatusOverviewCard = ({selectedButton, onClose}) => {
