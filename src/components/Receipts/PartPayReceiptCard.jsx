@@ -1,6 +1,6 @@
 import React from "react";
 import "./pendingReceipts.css";
-import close from "../../../assets/menuClose.svg";
+import close from "../../assets/menuClose.svg";
 
 const PartPayReceiptCard = ({ receiptID, partPaymentsData, onClose }) => {
   console.log(receiptID)
@@ -158,7 +158,6 @@ const PartPayReceiptCard = ({ receiptID, partPaymentsData, onClose }) => {
                 type="text"
                 id="amount"
                 defaultValue={partPaymentData.amount}
-                readOnly
               />
             </div>
           </>
@@ -298,7 +297,6 @@ const PartPayReceiptCard = ({ receiptID, partPaymentsData, onClose }) => {
                 type="text"
                 id="amount"
                 defaultValue={partPaymentData.amount}
-                readOnly
               />
             </div>
             {/* Render fields for Villas type */}
@@ -439,7 +437,6 @@ const PartPayReceiptCard = ({ receiptID, partPaymentsData, onClose }) => {
                 type="text"
                 id="amount"
                 defaultValue={partPaymentData.amount}
-                readOnly
               />
             </div>
             {/* Render fields for Plots type */}
@@ -589,7 +586,6 @@ const PartPayReceiptCard = ({ receiptID, partPaymentsData, onClose }) => {
                 type="text"
                 id="amount"
                 defaultValue={partPaymentData.amount}
-                readOnly
               />
             </div>
             {/* Render fields for Farm land type */}
@@ -607,12 +603,18 @@ const PartPayReceiptCard = ({ receiptID, partPaymentsData, onClose }) => {
           <img src={close} alt="Close card" onClick={onClose} />
         </div>
         <div className="rec-head">
-          <h3>Deleted Receipt</h3>
+          <h3>Part-Payment Receipt</h3>
         </div>
         <div className="rec-data">{renderFields()}</div>
-        <div className="rec-close">
-            <button onClick={onClose}>Close</button>
-        </div>
+        <div className="rec-actions">
+                <div className="rec-delete">
+                    <button>Delete</button>
+                </div>
+                <div className="rec-sec-actions">
+                    <div className="save"><button>Save</button></div>
+                    <div className="export-btn"><button>Export</button></div>
+                </div>
+            </div>
       </div>
     </div>
   );

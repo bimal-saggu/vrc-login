@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import exportIcon from '../../../assets/export.svg';
-import close from '../../../assets/menuClose.svg'
-import expensesCommissionData from "../../../data/expensesCommissionData";
-import expensesCommissionDropData from '../../../data/expensesCommissionDropData'
-import commissionCardData from '../../../data/commissionCardData';
+import exportIcon from '../../assets/export.svg';
+import close from '../../assets/menuClose.svg'
+import expensesCommissionData from "../../data/expensesCommissionData";
+import expensesCommissionDropData from '../../data/expensesCommissionDropData'
+import commissionCardData from '../../data/commissionCardData';
 import CommissionCard from "./CommissionCard";
 
 const CommissionTable = () => {

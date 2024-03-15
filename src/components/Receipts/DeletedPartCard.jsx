@@ -1,8 +1,8 @@
 import React from "react";
 import "./pendingReceipts.css";
-import close from "../../../assets/menuClose.svg";
+import close from "../../assets/menuClose.svg";
 
-const SoldCard = ({ receiptID, partPaymentsData, onClose }) => {
+const DeletedPartCard = ({ receiptID, partPaymentsData, onClose }) => {
   console.log(receiptID)
   console.log(partPaymentsData)
   const partPaymentData = partPaymentsData.find(
@@ -607,20 +607,15 @@ const SoldCard = ({ receiptID, partPaymentsData, onClose }) => {
           <img src={close} alt="Close card" onClick={onClose} />
         </div>
         <div className="rec-head">
-          <h3>Sold Receipt</h3>
+          <h3>Part-Payment Receipt</h3>
         </div>
         <div className="rec-data">{renderFields()}</div>
-        <div className="rec-actions">
-        <div className="sold-close">
-          <button onClick={onClose}>Close</button>
-        </div>
-        <div className="sold-export">
-          <button>Export</button>
-        </div>
+        <div className="rec-close">
+            <button onClick={onClose}>Close</button>
         </div>
       </div>
     </div>
   );
 };
 
-export default SoldCard;
+export default DeletedPartCard;

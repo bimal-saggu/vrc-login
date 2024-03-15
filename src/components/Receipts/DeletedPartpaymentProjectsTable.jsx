@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import partSoldDataDummy from "../../../data/partSoldData";
-import deleteIcon from "../../../assets/delete.svg";
-import exportIcon from "../../../assets/export.svg";
+import partSoldDataDummy from "../../data/partSoldData";
 
 const DeletedPartpaymentProjectsTable = () => {
     const [deltedPartpaymentProjects, setDeletedpartpaymentProjects] = useState([]);

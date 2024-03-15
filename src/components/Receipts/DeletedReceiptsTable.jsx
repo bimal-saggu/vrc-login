@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import '../Receipts/pendingReceipts.css';
-import deletedReceiptsDataDummy from '../../../data/deletedReceiptsDataDummy'
+import deletedReceiptsDataDummy from '../../data/deletedReceiptsDataDummy'
 import DeletedReceiptsCard from "./DeletedReceiptsCard";
 
 const DeletedReceiptsTable = () => {

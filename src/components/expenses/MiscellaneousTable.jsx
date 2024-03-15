@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import expensesMiscelData from '../../../data/expensesMiscelData';
+import expensesMiscelData from '../../data/expensesMiscelData';
 
 const MiscellaneousTable = () => {
     const [miscellaneousData, setMiscellaneousData] = useState([]);

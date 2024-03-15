@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import './/cpHistory.css'
-import logo from '../../../assets/logo.svg';
-import menu from '../../../assets/menu.svg';
-import close from '../../../assets/menuClose.svg';
-import exportIcon from '../../../assets/export.svg'
-import MobileModal from "../../menu/MobileModal";
-import cpHistoryData from '../../../data/cpHistoryData'
-import cpClientData from '../../../data/cpClientData'
+import './cpHistory.css'
+import logo from '../../assets/logo.svg';
+import menu from '../../assets/menu.svg';
+import close from '../../assets/menuClose.svg';
+import exportIcon from '../../assets/export.svg'
+import MobileModal from "../menu/MobileModal";
+import cpHistoryData from '../../data/cpHistoryData'
+import cpClientData from '../../data/cpClientData'
 import CpHistoryCard from "./CpHistoryCard";
-import cpHistoryCardData from "../../../data/cpHistoryCardData";
-import NavBar from "../../NavBar";
-import WebMenu from "../../menu/WebMenu";
+import cpHistoryCardData from "../../data/cpHistoryCardData";
+import NavBar from "../NavBar";
+import WebMenu from "../menu/WebMenu";
 
 const CpHistory = () => {
   const [isOpen, setIsOpen] = useState(false);

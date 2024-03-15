@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import '../Receipts/pendingReceipts.css';
-import receiptsDataDummy from '../../../data/receiptsDataDummy'
+import './pendingReceipts.css';
+import receiptsDataDummy from '../../data/receiptsDataDummy'
 import PendingReceiptCard from "./PendingReceiptCard";
 import DeletedReceiptsTable from "./DeletedReceiptsTable";
 

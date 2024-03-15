@@ -12,7 +12,7 @@ import StatusOverviewCard from '../components/admin/StatusOverviewCard'
 import UploadForm from '../components/admin/UploadForm'
 import AddProject from '../components/admin/AddProject'
 
-const AdminDash = () => {
+const ManagerDash = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedButton, setSelectedButton] = useState('Apartments');
     const [selectedRole, setSelectedRole] = useState('Super Admin');
@@ -135,9 +135,9 @@ const AdminDash = () => {
         {showPopUp === 'Add' && <AddProject selectedType={selectedButton} onClose={handleCloseClick} />}
         <MobileModal isOpen={isOpen} onClose={toggleModal} />
         <NavBar />
-        <WebMenu roleType={selectedRole}/>
+        <WebMenu />
     </div>
   )
 }
 
-export default AdminDash
+export default ManagerDash

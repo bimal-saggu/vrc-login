@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 
 const UploadForm = ({ selectedType, onClose }) => {
-  const [isOpen, setIsOpen] = useState(true);
-
-  const handleClose = () => {
-    setIsOpen(false);
-    // onClose();
-  };
 
   return (
     <div className="add_Proj">
@@ -16,14 +10,14 @@ const UploadForm = ({ selectedType, onClose }) => {
         </div>
         <div className="add_Form">
           <form action="">
-            <div className="add_input-field">
-              <div className="file-label">
-                <label htmlFor="file">Choose a CSV file.</label>
+            <div className="upl_input-field">
+              <input type="file" style={{display: 'none'}} accept=".csv" />
+            <div className="upl_input-text" disabled>
+              <div className="browse_input">
+                <p>Choose a CSV file</p>
               </div>
-              <div className="file-input-wrapper">
-                <input id="file" type="file" />
-                <button className="browse-button">Browse files</button>
-              </div>
+              <button className="browse">Browse files</button>
+            </div>
             </div>
             <div className="add_input-field">
               <label htmlFor="type" className="add-label">

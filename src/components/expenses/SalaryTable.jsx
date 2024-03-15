@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import expensesSalaryData from '../../../data/expensesSalaryData';
+import expensesSalaryData from '../../data/expensesSalaryData';
 
 const SalaryTable = () => {
     const [salaryData, setSalaryData] = useState([]);

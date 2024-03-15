@@ -36,24 +36,24 @@ const WebMenu = ({ roleType }) => {
             return (
               <>
                 <li>
-                  <a href=""><img src={home} alt="" /></a>
-                  <a href=""><p>Dashboard</p></a>
+                  <a href="/manager/dashboard"><img src={home} alt="" /></a>
+                  <a href="/manager/dashboard"><p>Dashboard</p></a>
                 </li>
                 <li>
-                  <a href=""><img src={receipts} alt="" /></a>
-                  <a href=""><p>Receipts</p></a>
+                  <a href="/manager/receipts"><img src={receipts} alt="" /></a>
+                  <a href="/manager/receipts"><p>Receipts</p></a>
                 </li>
                 <li>
-                  <a href=""><img src={expenses} alt="" /></a>
-                  <a href=""><p>Expenses</p></a>
+                  <a href="/manager/expenses"><img src={expenses} alt="" /></a>
+                  <a href="/manager/expenses"><p>Expenses</p></a>
                 </li>
                 <li>
-                  <a href=""><img src={history} alt="" /></a>
-                  <a href=""><p>SP History</p></a>
+                  <a href="/manager/sp-history"><img src={history} alt="" /></a>
+                  <a href="/manager/sp-history"><p>SP History</p></a>
                 </li>
                 <li>
-                  <a href=""><img src={history} alt="" /></a>
-                  <a href=""><p>CP History</p></a>
+                  <a href="/manager/cp-history"><img src={history} alt="" /></a>
+                  <a href="/manager/cp-history"><p>CP History</p></a>
                 </li>
               </>
             );

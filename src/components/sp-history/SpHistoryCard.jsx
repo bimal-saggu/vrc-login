@@ -1,13 +1,15 @@
 import React from "react";
-import logo from '../../../assets/logo.svg'
-import close from '../../../assets/menuClose.svg'
+import logo from '../../assets/logo.svg'
+import close from '../../assets/menuClose.svg'
+import spHistoryCardData from "../../data/spHistoryCardData";
 
-const CommissionCard = ({commissionHolderID, commissionCardDetails, onClose}) => {
-    const cardData = commissionCardDetails.find(data => data.commissionHolderID === commissionHolderID);
-    console.log(cardData);
-    const commissionLeft = (cardData.totalCommission - cardData.commissionReceived);
+const SpHistoryCard = ({salesPersonID, spHistoryCardDetails, onClose}) => {
 
-    if(!cardData) return null;
+  const cardData = spHistoryCardDetails.find(data => data.salesPersonID === salesPersonID);
+  console.log(cardData);
+  const commissionLeft = (cardData.totalCommission - cardData.commissionReceived);
+
+  if(!cardData) return null;
 
     const renderFields = () => {
       const projectType = cardData.projectType;
@@ -25,12 +27,12 @@ const CommissionCard = ({commissionHolderID, commissionCardDetails, onClose}) =>
                   <input type="text" id="dateOfOnboard" defaultValue={cardData.date} readOnly />
                 </div>
                 <div className="sp-data-field">
-                  <label htmlFor="commissionHolderID">Commission Holder ID</label>
-                  <input type="text" id="commissionHolderID" defaultValue={cardData.commissionHolderID} readOnly />
+                  <label htmlFor="salesPersonID">Sales Person ID</label>
+                  <input type="text" id="salesPersonID" defaultValue={cardData.salesPersonID} readOnly />
                 </div>
                 <div className="sp-data-field">
-                  <label htmlFor="commissionHolderName">Commission Holder Name</label>
-                  <input type="text" id="commissionHolderName" defaultValue={cardData.commissionHolderName} readOnly />
+                  <label htmlFor="salesPersonName">Sales Person Name</label>
+                  <input type="text" id="salesPersonName" defaultValue={cardData.salesPersonName} readOnly />
                 </div>
                 <div className="sp-data-field">
                   <label htmlFor="clientName">Client Name</label>
@@ -66,7 +68,7 @@ const CommissionCard = ({commissionHolderID, commissionCardDetails, onClose}) =>
                 </div>
                 <div className="sp-data-field">
                   <label htmlFor="priceOfProperty">Price of Property</label>
-                  <input type="text" id="priceOfProperty" defaultValue={cardData.priceOfProperty} readOnly />
+                  <input type="text" id="priceOfProperty" defaultValue={cardData.priceOfProperty} />
                 </div>
                 <div className="sp-data-field">
                   <label htmlFor="status">Status</label>
@@ -110,12 +112,12 @@ const CommissionCard = ({commissionHolderID, commissionCardDetails, onClose}) =>
                   <input type="text" id="dateOfOnboard" defaultValue={cardData.date} readOnly />
                 </div>
                 <div className="sp-data-field">
-                  <label htmlFor="commissionHolderID">Commission Holder ID</label>
-                  <input type="text" id="commissionHolderID" defaultValue={cardData.commissionHolderID} readOnly />
+                  <label htmlFor="salesPersonID">Sales Person ID</label>
+                  <input type="text" id="salesPersonID" defaultValue={cardData.salesPersonID} readOnly />
                 </div>
                 <div className="sp-data-field">
-                  <label htmlFor="commissionHolderName">Commission Holder Name</label>
-                  <input type="text" id="commissionHolderName" defaultValue={cardData.commissionHolderName} readOnly />
+                  <label htmlFor="salesPersonName">Sales Person Name</label>
+                  <input type="text" id="salesPersonName" defaultValue={cardData.salesPersonName} readOnly />
                 </div>
                 <div className="sp-data-field">
                   <label htmlFor="clientName">Client Name</label>
@@ -147,7 +149,7 @@ const CommissionCard = ({commissionHolderID, commissionCardDetails, onClose}) =>
                 </div>
                 <div className="sp-data-field">
                   <label htmlFor="priceOfProperty">Price of Property</label>
-                  <input type="text" id="priceOfProperty" defaultValue={cardData.priceOfProperty} readOnly />
+                  <input type="text" id="priceOfProperty" defaultValue={cardData.priceOfProperty} />
                 </div>
                 <div className="sp-data-field">
                   <label htmlFor="status">Status</label>
@@ -192,12 +194,12 @@ const CommissionCard = ({commissionHolderID, commissionCardDetails, onClose}) =>
                   <input type="text" id="dateOfOnboard" defaultValue={cardData.date} readOnly />
                 </div>
                 <div className="sp-data-field">
-                  <label htmlFor="commissionHolderID">Commission Holder ID</label>
-                  <input type="text" id="commissionHolderID" defaultValue={cardData.commissionHolderID} readOnly />
+                  <label htmlFor="salesPersonID">Sales Person ID</label>
+                  <input type="text" id="salesPersonID" defaultValue={cardData.salesPersonID} readOnly />
                 </div>
                 <div className="sp-data-field">
-                  <label htmlFor="commissionHolderName">Commission Holder Name</label>
-                  <input type="text" id="commissionHolderName" defaultValue={cardData.commissionHolderName} readOnly />
+                  <label htmlFor="salesPersonName">Sales Person Name</label>
+                  <input type="text" id="salesPersonName" defaultValue={cardData.salesPersonName} readOnly />
                 </div>
                 <div className="sp-data-field">
                   <label htmlFor="clientName">Client Name</label>
@@ -229,7 +231,7 @@ const CommissionCard = ({commissionHolderID, commissionCardDetails, onClose}) =>
                 </div>
                 <div className="sp-data-field">
                   <label htmlFor="priceOfProperty">Price of Property</label>
-                  <input type="text" id="priceOfProperty" defaultValue={cardData.priceOfProperty} readOnly />
+                  <input type="text" id="priceOfProperty" defaultValue={cardData.priceOfProperty} />
                 </div>
                 <div className="sp-data-field">
                   <label htmlFor="status">Status</label>
@@ -274,12 +276,12 @@ const CommissionCard = ({commissionHolderID, commissionCardDetails, onClose}) =>
                   <input type="text" id="dateOfOnboard" defaultValue={cardData.date} readOnly />
                 </div>
                 <div className="sp-data-field">
-                  <label htmlFor="commissionHolderID">Commission Holder ID</label>
-                  <input type="text" id="commissionHolderID" defaultValue={cardData.commissionHolderID} readOnly />
+                  <label htmlFor="salesPersonID">Sales Person ID</label>
+                  <input type="text" id="salesPersonID" defaultValue={cardData.salesPersonID} readOnly />
                 </div>
                 <div className="sp-data-field">
-                  <label htmlFor="commissionHolderName">Commission Holder Name</label>
-                  <input type="text" id="commissionHolderName" defaultValue={cardData.commissionHolderName} readOnly />
+                  <label htmlFor="salesPersonName">Sales Person Name</label>
+                  <input type="text" id="salesPersonName" defaultValue={cardData.salesPersonName} readOnly />
                 </div>
                 <div className="sp-data-field">
                   <label htmlFor="clientName">Client Name</label>
@@ -315,7 +317,7 @@ const CommissionCard = ({commissionHolderID, commissionCardDetails, onClose}) =>
                 </div>
                 <div className="sp-data-field">
                   <label htmlFor="priceOfProperty">Price of Property</label>
-                  <input type="text" id="priceOfProperty" defaultValue={cardData.priceOfProperty} readOnly />
+                  <input type="text" id="priceOfProperty" defaultValue={cardData.priceOfProperty} />
                 </div>
                 <div className="sp-data-field">
                   <label htmlFor="status">Status</label>
@@ -360,7 +362,7 @@ const CommissionCard = ({commissionHolderID, commissionCardDetails, onClose}) =>
               <div className="logo">
                 <img src={logo} alt="Logo" />
               </div>
-              <h3>Commission</h3>
+              <h3>SP History</h3>
               <div className='close'>
                 <img src={close} alt="Close card" onClick={onClose} />
               </div>
@@ -376,4 +378,4 @@ const CommissionCard = ({commissionHolderID, commissionCardDetails, onClose}) =>
   );
 };
 
-export default CommissionCard;
+export default SpHistoryCard;

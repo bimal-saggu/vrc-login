@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import '../Receipts/pendingReceipts.css';
-import logo from '../../../assets/logo.svg';
-import menu from '../../../assets/menu.svg'
-import MobileModal from "../../menu/MobileModal";
-import NavBar from '../../NavBar';
-import WebMenu from '../../menu/WebMenu';
+import logo from '../../assets/logo.svg';
+import menu from '../../assets/menu.svg'
+import MobileModal from "../menu/MobileModal";
+import NavBar from '../NavBar';
+import WebMenu from '../menu/WebMenu';
 import PendingReceiptsTable from "./PendingReceiptsTable";
 import PartSoldTable from "./PartSoldTable";
 import DeletedReceiptsTable from "./DeletedReceiptsTable";

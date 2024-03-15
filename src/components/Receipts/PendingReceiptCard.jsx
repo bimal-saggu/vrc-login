@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './pendingReceipts.css'
-import close from '../../../assets/menuClose.svg'
+import close from '../../assets/menuClose.svg'
 
 const PendingReceiptCard = ({ projectID, receiptsData, onClose }) => {
     const receiptData = receiptsData.find(receipt => receipt.projectID === projectID);

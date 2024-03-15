@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import './/expenses.css'
-import logo from '../../../assets/logo.svg';
-import menu from '../../../assets/menu.svg';
-import leadExport from '../../../assets/export.svg'
-import MobileModal from "../../menu/MobileModal";
+import './expenses.css'
+import logo from '../../assets/logo.svg';
+import menu from '../../assets/menu.svg';
+import leadExport from '../../assets/export.svg'
+import MobileModal from "../menu/MobileModal";
 import CommissionTable from "./CommissionTable";
 import SalaryTable from "./SalaryTable";
 import MiscellaneousTable from "./MiscellaneousTable";
-import NavBar from '../../NavBar';
-import WebMenu from '../../menu/WebMenu';
+import NavBar from '../NavBar';
+import WebMenu from '../menu/WebMenu';
 
 const Expenses = () => {
     const [isOpen, setIsOpen] = useState(false);

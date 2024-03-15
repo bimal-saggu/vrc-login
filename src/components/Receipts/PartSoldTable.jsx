@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from "react";
 import "./pendingReceipts.css";
-import soldDataDummy from "../../../data/soldDataDummy";
-import partSoldPayments from "../../../data/partSoldPayments";
-import partPayRecData from "../../../data/partPayRecData";
-import close from "../../../assets/menuClose.svg";
-import deleteIcon from "../../../assets/delete.svg";
-import exportIcon from "../../../assets/export.svg";
-import SoldCard from "./SoldCard";
-import SoldDeletedProjects from "./SoldDeletedProjects";
+import partSoldDataDummy from "../../data/partSoldData";
+import partSoldPayments from "../../data/partSoldPayments";
+import partPayRecData from "../../data/partPayRecData";
+import close from "../../assets/menuClose.svg";
+import deleteIcon from "../../assets/delete.svg";
+import exportIcon from "../../assets/export.svg";
+import PartPayReceiptCard from "./PartPayReceiptCard";
+// import DeletedPartPaymentsTable from "./DeletedPartPaymentsTable";
+import DeletedPartTable from "./DeletedPartTable";
+import DeletedPartpaymentProjectsTable from "./DeletedPartpaymentProjectsTable";
 
-const SoldTable = () => {
-  const [soldData, setSoldData] = useState([]);
+const PartSoldTable = () => {
+  const [partSoldData, setPartSoldData] = useState([]);
   const [partPaymentsData, setPartPaymentsData] = useState([]);
   const [selectedRow, setSelectedRow] = useState(null);
   const [selectedReceiptId, setSelectedReceiptId] = useState(null);
-  const [showDeletedProjects, setShowDeletedProjects] = useState(false); 
+  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedPartOption, setSelectedPartOption] = useState("Deleted Part");
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -22,7 +25,7 @@ const SoldTable = () => {
   }, []);
 
   useEffect(() => {
-    setSoldData(soldDataDummy);
+    setPartSoldData(partSoldDataDummy)
   }, []);
 
   useEffect(() => {
@@ -52,6 +55,20 @@ const SoldTable = () => {
   const handleClosePartPayReceiptCard = () => {
     setSelectedReceiptId(false);
   };
+
+  const handleSelectChange = (event) => {
+    setSelectedOption(event.target.value); // Update selected option
+    // console.log(selectedOption);
+  };
+
+  const handleSelectPartChange = (event) => {
+    setSelectedPartOption(event.target.value); // Update selected option
+    // console.log(selectedOption);
+  };
+
+  // useEffect(() => {
+  //   console.log(selectedOption);
+  // }, [selectedOption]);
 
   const renderDropdown = (projectID) => {
     const selectedProject = partSoldPayments.find(
@@ -110,14 +127,16 @@ const SoldTable = () => {
       <div className="receipt-table-sec">
         <div className="receipt-table-head">
           <h3>Receipts</h3>
-          <div className="deleted-receipts">
-          <button onClick={() => setShowDeletedProjects(!showDeletedProjects)}>Deleted Projects</button>
+          <div className="deleted-type">
+          <select className="select-deleted-type" value={selectedOption} onChange={handleSelectChange}>
+                <option value="">Deleted Part Payment</option>
+                <option value="Deleted Part Payment">Deleted Part Payments</option>
+                <option value="Deleted Projects">Deleted Projects</option>
+            </select>
           </div>
         </div>
-        {showDeletedProjects ? (
-          <SoldDeletedProjects />
-        ) : (
         <div className="receipts-table-container">
+        {selectedOption === "" && (
           <table>
             <thead>
               <tr>
@@ -129,16 +148,16 @@ const SoldTable = () => {
               </tr>
             </thead>
             <tbody>
-              {soldData.map((data) => (
-                <React.Fragment key={data.projectID}>
+              {partSoldData.map((partSold) => (
+                <React.Fragment key={partSold.projectID}>
                   <tr
-                    key={data.projectID}
-                    onClick={() => handleRowClick(data.projectID)}
+                    key={partSold.projectID}
+                    onClick={() => handleRowClick(partSold.projectID)}
                   >
-                    <td>{data.projectID}</td>
-                    <td>{data.projectName}</td>
-                    <td>{data.clientName}</td>
-                    {viewportWidth >= 1024 && <td>{data.status}</td>}
+                    <td>{partSold.projectID}</td>
+                    <td>{partSold.projectName}</td>
+                    <td>{partSold.clientName}</td>
+                    {viewportWidth >= 1024 && <td>{partSold.status}</td>}
                     {viewportWidth >= 1024 && (
                       <td>
                         <div className="receipt-actions">
@@ -148,16 +167,21 @@ const SoldTable = () => {
                       </td>
                     )}
                   </tr>
-                  {renderDropdown(data.projectID)}
+                  {renderDropdown(partSold.projectID)}
                 </React.Fragment>
               ))}
             </tbody>
-          </table>
+          </table> )}
+          {selectedOption === "Deleted Part Payment" && (
+            <DeletedPartTable />
+          )}
+          {selectedOption === "Deleted Projects" && (
+            <DeletedPartpaymentProjectsTable />
+          )}
         </div>
-        )}
       </div>
       {selectedReceiptId && (
-        <SoldCard
+        <PartPayReceiptCard
           receiptID={selectedReceiptId}
           partPaymentsData={partPaymentsData}
           onClose={handleClosePartPayReceiptCard}
@@ -165,11 +189,19 @@ const SoldTable = () => {
       )}
     </div>
     {viewportWidth >= 1024 && <div className="res-del-rec">
-      <h2>Deleted Projects</h2>
-      <SoldDeletedProjects />
+    <select className="part-select" value={selectedPartOption} onChange={handleSelectPartChange}>
+                <option value="Deleted Part">Deleted Part Payments</option>
+                <option value="Deleted Proj">Deleted Projects</option>
+    </select>
+    {selectedPartOption === "Deleted Part" && (
+            <DeletedPartTable />
+          )}
+          {selectedPartOption === "Deleted Proj" && (
+            <DeletedPartpaymentProjectsTable />
+          )}
     </div>}
     </>
   );
 };
 
-export default SoldTable;
+export default PartSoldTable;

@@ -60,6 +60,10 @@
   border-top: 20px solid #fff;
 }
 
+.ex-export-sec {
+  display: none;
+}
+
 /* Miscellaneous Table */
 
 .miscel-table-container {
@@ -96,6 +100,7 @@
     cursor: pointer;
   }
   .ex-export-sec {
+    display: flex;
     margin-right: 20px;
   }
 

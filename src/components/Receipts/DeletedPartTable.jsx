@@ -1,26 +1,25 @@
 import React, { useEffect, useState } from "react";
-import partPayRecData from "../../../data/partPayRecData";
-import partSoldPayments from "../../../data/partSoldPayments";
-import close from "../../../assets/menuClose.svg";
-import deleteIcon from "../../../assets/delete.svg";
-import exportIcon from "../../../assets/export.svg";
-import partSoldDataDummy from "../../../data/partSoldData";
-import SoldDeletedProjectsCard from './SoldDeletedProjectsCard'
+import './pendingReceipts.css'
+import partSoldPayments from "../../data/partSoldPayments";
+import partPayRecData from "../../data/partPayRecData";
+import close from "../../assets/menuClose.svg";
+import abcd from "../../data/abcd";
+import DeletedPartCard from "./DeletedPartCard";
 
-const SoldDeletedProjects = () => {
-    const [deletedProjects, setDeletedProjects] = useState([]);
+const DeletedPartTable = () => {
+    const [deltedPartpayments, setDeletedpartpayments] = useState([]);
     const [partPaymentsData, setPartPaymentsData] = useState([]);
     const [selectedRow, setSelectedRow] = useState(null);
     const [selectedReceiptId, setSelectedReceiptId] = useState(null);
     const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
 
     useEffect(() => {
-        setDeletedProjects(partSoldDataDummy);
-    }, [])
+      setPartPaymentsData(partPayRecData);
+    }, []);
 
     useEffect(() => {
-        setPartPaymentsData(partPayRecData);
-    }, []);
+        setDeletedpartpayments(abcd);
+    }, [])
 
     useEffect(() => {
         const handleResize = () => {
@@ -46,10 +45,10 @@ const SoldDeletedProjects = () => {
         setSelectedRow(null);
       };
     
-      const handleClosePartPayReceiptCard = () => {
+      const handleCloseDeletedPartCard = () => {
         setSelectedReceiptId(false);
       };
-
+    
       const renderDropdown = (projectID) => {
         const selectedProject = partSoldPayments.find(
           (item) => item.projectID === projectID
@@ -104,7 +103,7 @@ const SoldDeletedProjects = () => {
   return (
     <div>
       <div className="receipt-table-sec">
-        <div className="receipts-table-container sold-receipts-table-container">
+        <div className="receipts-table-container part-pay-del">
           <table>
             <thead>
               <tr>
@@ -115,7 +114,7 @@ const SoldDeletedProjects = () => {
               </tr>
             </thead>
             <tbody>
-              {deletedProjects.map((data) => (
+              {deltedPartpayments.map((data) => (
                 <React.Fragment key={data.projectID}>
                   <tr
                     key={data.projectID}
@@ -133,9 +132,9 @@ const SoldDeletedProjects = () => {
           </table>
         </div>
       </div>
-      {selectedReceiptId && <SoldDeletedProjectsCard receiptID={selectedReceiptId} partPaymentsData={partPaymentsData} onClose={handleClosePartPayReceiptCard} />}
+      {selectedReceiptId && <DeletedPartCard receiptID={selectedReceiptId} partPaymentsData={partPaymentsData} onClose={handleCloseDeletedPartCard} />}
     </div>
   );
 };
 
-export default SoldDeletedProjects;
+export default DeletedPartTable;

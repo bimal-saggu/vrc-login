@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import './/spHistory.css'
-import logo from '../../../assets/logo.svg';
-import menu from '../../../assets/menu.svg';
-import close from '../../../assets/menuClose.svg';
-import exportIcon from '../../../assets/export.svg';
-import MobileModal from "../../menu/MobileModal";
-import spHistoryData from '../../../data/spHistoryData'
-import spClientData from "../../../data/spClientData";
+import logo from '../../assets/logo.svg';
+import menu from '../../assets/menu.svg';
+import close from '../../assets/menuClose.svg';
+import exportIcon from '../../assets/export.svg';
+import MobileModal from "../menu/MobileModal";
+import spHistoryData from '../../data/spHistoryData'
+import spClientData from "../../data/spClientData";
 import SpHistoryCard from "./SpHistoryCard";
-import spHistoryCardData from "../../../data/spHistoryCardData";
-import NavBar from "../../NavBar";
-import WebMenu from "../../menu/WebMenu";
+import spHistoryCardData from "../../data/spHistoryCardData";
+import NavBar from "../NavBar";
+import WebMenu from "../menu/WebMenu";
 
 const SpHistory = () => {
     const [isOpen, setIsOpen] = useState(false);
